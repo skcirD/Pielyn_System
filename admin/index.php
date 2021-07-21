@@ -23,7 +23,7 @@ echo $_SESSION['existing'];
           <h1 class="pielyn-store">Inventory System | Pielyn Store</h1>
         </div>
 
-        <h4 class="user">Administrator</h4>
+        <h4 class="user">Hendwrick</h4>
 
       </div>
       <div class="wrapper">
