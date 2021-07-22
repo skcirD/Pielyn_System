@@ -1,8 +1,6 @@
 <?php
 require_once '../php/init.php';
-session_start();
-echo $_SESSION['username'];
-echo $_SESSION['existing'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -23,7 +21,7 @@ echo $_SESSION['existing'];
           <h1 class="pielyn-store">Inventory System | Pielyn Store</h1>
         </div>
 
-        <h4 class="user">Hendwrick</h4>
+        <h4 class="user">Administrator</h4>
 
       </div>
       <div class="wrapper">
@@ -43,9 +41,6 @@ echo $_SESSION['existing'];
       </div>
       <div class="main-content">
 
-            <form action="../class/logout.php" method="post">
-              <input type="submit" value="Logout">
-            </form>
 
       </div>
 

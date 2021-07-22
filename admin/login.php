@@ -21,7 +21,7 @@ require_once '../php/init.php';
               </div>
               <div class="form-container">
                 <form class="" action="" method="post">
-                  <?php login(); ?>
+                  <?php login(); session_start(); echo $_SESSION['username']; ?>
                   <div class="username">
 
                       <label for="username">Username</label><br>
