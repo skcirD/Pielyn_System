@@ -1,5 +1,6 @@
 <?php
 require_once '../php/init.php';
+security_session();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

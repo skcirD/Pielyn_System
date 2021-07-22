@@ -1,6 +1,7 @@
 <?php
 require_once '../php/init.php';
-
+session_start();
+security_session();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -21,7 +22,7 @@ require_once '../php/init.php';
           <h1 class="pielyn-store">Inventory System | Pielyn Store</h1>
         </div>
 
-        <h4 class="user">Administrator</h4>
+        <h4 class="user"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?></h4>
 
       </div>
       <div class="wrapper">
@@ -40,7 +41,7 @@ require_once '../php/init.php';
         </div>
       </div>
       <div class="main-content">
-
+            <a href="logout.php">Logout</a>
 
       </div>
 

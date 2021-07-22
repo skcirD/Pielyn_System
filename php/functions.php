@@ -1,8 +1,20 @@
 <?php
 
 function login(){
+  session_start();
+
+  if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+    // SET DEFAULT INVALID
+    $_SESSION['status'] = 'invalid';
+  }
+
+  if($_SESSION['status'] == 'valid'){
+    // if valid status go back to the main page.
+    // echo "<script>window.location.href = '/Inventory_POS_Pielyn/admin/index.php'</script>";
+    pathTo('admin', 'index');
+  }
+
   if (isset($_POST['submit'])) {
-    // code...
     $password = md5($_POST['password']);
     $username = $_POST['username'];
 
@@ -42,4 +54,32 @@ function displayCategory(){
   }
 }
 
+function logout(){
+
+  session_start();
+
+  $_SESSION['status'] = 'invalid';
+  unset($_SESSION['firstname']);
+  unset($_SESSION['lastname']);
+
+  pathTo('admin', 'login');
+  // echo "<script>window.location.href = '/Inventory_POS_Pielyn/admin/login.php'</script>";
+}
+
+function pathTo($folder, $fileName){
+  echo "<script>window.location.href = '/Inventory_POS_Pielyn/$folder/$fileName.php'</script>";
+}
+
+function security_session(){
+  if(!isset($_SESSION)){
+    session_start();
+  }
+  if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+    $_SESSION['status'] = 'invalid';
+    unset($_SESSION['firstname']);
+    unset($_SESSION['lastname']);
+
+    pathTo('admin', 'login');
+  }
+}
 ?>

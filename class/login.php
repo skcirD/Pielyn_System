@@ -23,11 +23,12 @@
 
       if ($total >0) {
         session_start();
-        $_SESSION['existing'] = 'true';
-        $_SESSION['username'] = $user['username'];
+        $_SESSION['status'] = 'valid';
+        $_SESSION['firstname'] = $user['first_name'];
+        $_SESSION['lastname'] = $user['last_name'];
         header("Location: index.php");
       }else{
-        $_SESSION['existing'] = 'false';
+        $_SESSION['status'] = 'invalid';
               echo "Failed to Login!";
       }
     }
