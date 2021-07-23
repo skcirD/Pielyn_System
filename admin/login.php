@@ -51,5 +51,6 @@ require_once '../php/init.php';
         <button class="btn-modal" type="button" name="button">Ok</button>
       </div>
     </div> -->
+    <script src="../javascript/jFunctions.js" charset="utf-8"></script>
   </body>
 </html>

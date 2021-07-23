@@ -29,7 +29,10 @@
         header("Location: index.php");
       }else{
         $_SESSION['status'] = 'invalid';
-              echo "Failed to Login!";
+              echo '<div class="alert">
+                <span class="closebtn">&times;</span>
+                <strong>Failed!</strong> Check your Username and Password.
+              </div>';
       }
     }
   }

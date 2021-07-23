@@ -135,6 +135,26 @@ button:hover{
 }
 
 
+/* FAILED TO LOGIN style */
+.alert{
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: #F5F5F5;
+  color: orange;
+  border-radius: 4px;
+
+}
+
+.closebtn{
+  margin-left: 15px;
+  color: orange;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
 /* MODAL CONTAINER  */
 /* p{
