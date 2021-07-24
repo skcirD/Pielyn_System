@@ -43,15 +43,17 @@ security_session();
         </div>
       </div>
       <div class="main-content">
-
+            <h3>Manage </h3><h6>Brands</h6>
+            <?php delete_brand(); ?>
+            <input class="btn-addbrand" type="button" name="btn-addbrand" value="Add Brand">
           <div class="brand-container">
-            <h1 class="text-brand">BRAND</h1>
+            <h1 class="text-brand">Mange Brands</h1>
             <table class="brand-table">
                 <thead>
                     <th>Brand Name</th>
-                    <th class="op">Operations</th>
+                    <th class="op">Action</th>
                 </thead>
-                <?php delete_brand(); ?>
+
                 <?php displayBrand(); ?>
 
                 <!-- <tr>
@@ -66,6 +68,6 @@ security_session();
           </div>
 
       </div>
-
+  <script src="../javascript/jFunctions.js" charset="utf-8"></script>
   </body>
 </html>

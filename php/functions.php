@@ -33,7 +33,7 @@ function delete_brand(){
   if(!empty($_GET['delete'])){
     $d = new delete($_GET['delete']);
     if($d->deleteBrand()){
-      echo "Brand Deleted successfully!";
+      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
     }else{
       echo "Brand Delete Error!";
     }

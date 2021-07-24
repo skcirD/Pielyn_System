@@ -4,14 +4,67 @@
 /* cntainer */
 .main-content{
   display: block;
-
 }
+
+.main-content h3{
+  font-weight: 900;
+  display: inline;
+  color: #008D96;
+}
+
+.main-content h6{
+  color: gray;
+  display: inline;
+}
+
+.main-content .txt-addSuccess i{
+  margin-right: 3px;
+}
+
+.txt-addSuccess{
+  background-color: #008D96;
+  color: white;
+  width: 82.5%;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-top: 6px;
+  font-weight: bolder;
+  position: fixed;
+  display: visible;
+}
+
+.closebtn{
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-addbrand{
+  margin-top: 50px;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  background-color: #008D96;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
 .brand-container{
   width: 100%;
-  margin-top: 10px;
+  margin-top: 100px;
   box-shadow: 1px -1px 1px 1px rgb(194, 192, 192);
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: white;
+  font-size: 15px;
 }
 
 /* label */
@@ -19,6 +72,7 @@
   font-family: 'Open Sans', sans-serif;
   color: #008D96;
   padding: 5px;
+  font-size: 20px;
 }
 
 .brand-table{
@@ -28,7 +82,7 @@
 }
 
 .brand-table td, .brand-table th{
-    padding: 12px 15px;
+    padding: 10px 15px;
     border: 1px solid #ddd;
 }
 .brand-table th{
