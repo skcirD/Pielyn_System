@@ -23,6 +23,22 @@ function login(){
   }
 }
 
+function add_Brand(){
+  if(isset($_GET['btn-addBrand']) && empty($_GET['txt-brand'])){
+    echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Enter a brand name to add <span class="closebtn">&times;</span></div>';
+  }
+  if(!empty($_GET['txt-brand'])){
+    $brandName = $_GET['txt-brand'];
+
+    $brand = new add($brandName);
+
+    if($brand->addBrand()){
+      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add Successfully <span class="closebtn">&times;</span></div>';
+    }else{
+      echo "Failed to add new brand";
+    }
+  }
+}
 
 function displayBrand(){
   $d = new brand();

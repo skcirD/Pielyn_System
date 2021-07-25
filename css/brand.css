@@ -21,8 +21,25 @@
   margin-right: 3px;
 }
 
+.main-content .txt-error i{
+  margin-right: 3px;
+}
+
 .txt-addSuccess{
   background-color: #008D96;
+  color: white;
+  width: 82.5%;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-top: 6px;
+  font-weight: bolder;
+  position: fixed;
+  display: visible;
+}
+
+.txt-error{
+  background-color: #F58220;
   color: white;
   width: 82.5%;
   font-size: 13px;
@@ -45,6 +62,17 @@
   transition: 0.3s;
 }
 
+.modal-closebtn{
+  margin-left: 15px;
+  color: #008D96;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 .btn-addbrand{
   margin-top: 50px;
   position: absolute;
@@ -56,6 +84,7 @@
   padding: 5px;
   font-weight: bolder;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .brand-container{
@@ -130,4 +159,90 @@
   transition: 0.2s;
   color: #008c96a4;
   margin-left: 10px;
+}
+
+
+/* MODaL CONTAINER....... */
+.addBrand-modal{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* BRAND FORM */
+.add-brand{
+  width: 400px;
+  height: 165px;
+  position: relative;
+  top: 100px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.addBrand-container{
+  margin: 10px;
+}
+
+.addBrand-modal .add-brand .addBrand-container h4{
+  font-size: 15px;
+  color: #008c96a4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.addBrand-modal .add-brand .top-hr{
+  border: 1px solid #008c96a4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background-color: #008c96a4;
+  position: relative;
+  top: 40px;
+}
+
+.addBrand-modal .add-brand .addBrand-container label{
+  display: block;
+  margin-top: 20px;
+  color:  #008c96a4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+.addBrand-modal .add-brand .addBrand-container input{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+  border: solid 1px  #008c96a4;
+}
+
+.addBrand-modal .add-brand .bottom-hr{
+  border: 1px solid #008c96a4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  position: relative;
+  background-color: #008c96a4;
+}
+
+.addBrand-modal .add-brand .addBrand-container .btn-addBrand{
+  background-color: #008c96a4;
+  color: white;
+  width: 100px;
+  position: absolute;
+  right: 10px;
+}
+
+.addBrand-modal .add-brand .addBrand-container .btn-addBrand:hover{
+  cursor: pointer;
+  background-color: #006870;
+  transition: 0.5s;
 }

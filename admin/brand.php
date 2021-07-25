@@ -14,9 +14,9 @@ security_session();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
   </head>
   <body>
       <div class="nav-bar">
@@ -24,9 +24,7 @@ security_session();
           <img class="top-logo" src="images/circle-Logo1.png" alt="img">
           <h1 class="pielyn-store">Inventory System | Pielyn Store</h1>
         </div>
-
-        <h4 class="user">Administrator</h4>
-
+        <h4 class="user"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?></h4>
       </div>
       <div class="wrapper">
         <div class="side-bar">
@@ -44,30 +42,36 @@ security_session();
       </div>
       <div class="main-content">
             <h3>Manage </h3><h6>Brands</h6>
-            <?php delete_brand(); ?>
-            <input class="btn-addbrand" type="button" name="btn-addbrand" value="Add Brand">
+            <?php
+              delete_brand();
+              add_Brand();
+            ?>
+            <input class="btn-addbrand" id="btn-brand" type="button" name="btn-addbrand" value="Add Brand">
           <div class="brand-container">
-            <h1 class="text-brand">Mange Brands</h1>
+            <h1 class="text-brand">Manage Brands</h1>
             <table class="brand-table">
                 <thead>
                     <th>Brand Name</th>
                     <th class="op">Action</th>
                 </thead>
-
                 <?php displayBrand(); ?>
-
-                <!-- <tr>
-                    <td>Lucky-Me</td>
-                    <td class="U-D">
-                      <a class="update" href="#">update</a>
-                      <a class="delete" href="#">delete</a>
-                    </td>
-                </tr> -->
-
             </table>
           </div>
-
       </div>
-  <script src="../javascript/jFunctions.js" charset="utf-8"></script>
+
+      <div class="addBrand-modal">
+        <form class="add-brand" action="" method="GET">
+          <hr class="top-hr">
+          <div class="addBrand-container">
+                <h4>Add Brand <span class="modal-closebtn">&times;</span></h4>
+                <label for="">Brand Name</label>
+                <input type="text" name="txt-brand" placeholder="Enter brand name">
+                <input class="btn-addBrand" type="submit" name="btn-addBrand" value="Add">
+          </div>
+          <hr class="bottom-hr">
+        </form>
+      </div>
+      <script src="../javascript/brand.js" charset="utf-8"></script>
+      <script src="../javascript/jFunctions.js" charset="utf-8"></script>
   </body>
 </html>
