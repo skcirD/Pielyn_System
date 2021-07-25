@@ -6,14 +6,21 @@
     function getCategoryName()
     {
       $con = $this->con();
-      $sql = "SELECT `category_name` FROM `category`";
+      $sql = "SELECT * FROM `category`";
       $data = $con->prepare($sql);
       $data->execute();
       $result = $data->fetchAll(PDO::FETCH_ASSOC);
 
-      return $result;
+      foreach($result as $data){
+        echo "<tr>
+                  <td>$data[category_name]</td>
+                  <td>
+                    <a class='update' href='category.php?update=$data[category_id]'>update</a>
+                    <a class='delete' href='category.php?delete=$data[category_id]'>delete</a>
+                  </td>
+              </tr>";
+      }
     }
   }
-
 
  ?>

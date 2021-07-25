@@ -21,6 +21,19 @@
         return false;
       }
     }
+
+    public function deleteCategory(){
+      $con = $this->con();
+
+      $sql = "DELETE FROM `category` WHERE `category_id` = $this->id";
+      $data = $con->prepare($sql);
+
+      if($data->execute()){
+        return true;
+      }else {
+        return false;
+      }
+    }
   }
 
  ?>

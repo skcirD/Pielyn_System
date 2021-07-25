@@ -6,19 +6,101 @@
   display: block;
 }
 
+.main-content h3{
+  font-weight: 900;
+  display: inline;
+  color: #008D96;
+}
+
+.main-content h6{
+  color: gray;
+  display: inline;
+}
+
+.main-content .txt-addSuccess i{
+  margin-right: 3px;
+}
+
+.main-content .txt-error i{
+  margin-right: 3px;
+}
+
+.txt-addSuccess{
+  background-color: #008D96;
+  color: white;
+  width: 82.5%;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-top: 6px;
+  font-weight: bolder;
+  position: fixed;
+  display: visible;
+}
+
+.txt-error{
+  background-color: #F58220;
+  color: white;
+  width: 82.5%;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-top: 6px;
+  font-weight: bolder;
+  position: fixed;
+  display: visible;
+}
+
+.closebtn{
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-closebtn{
+  margin-left: 15px;
+  color: #008D96;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-addcategory{
+  margin-top: 50px;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  background-color: #008D96;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
 .category-container{
   width: 100%;
-  margin-top: 10px;
+  margin-top: 100px;
   box-shadow: 1px -1px 1px 1px rgb(194, 192, 192);
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: white;
+  font-size: 15px;
 }
 
 /* label */
 .text-category{
-  font-family: 'Open Sans', sans-serif;
   color: #008D96;
   padding: 5px;
+  font-size: 20px;
 }
 
 .category-table{
@@ -76,4 +158,91 @@
   transition: 0.2s;
   color: #008c96a4;
   margin-left: 10px;
+}
+
+
+/* MODaL CONTAINER....... */
+.addCategory-modal{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* BRAND FORM */
+.add-category{
+  width: 400px;
+  height: 165px;
+  position: relative;
+  top: 100px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.addCategory-container{
+  margin: 10px;
+}
+
+.addCategory-modal .add-category .addCategory-container h4{
+  font-size: 15px;
+  color: #008c96a4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.addCategory-modal .add-category .top-hr{
+  border: 1px solid #008c96a4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background-color: #008c96a4;
+  position: relative;
+  top: 40px;
+}
+
+.addCategory-modal .add-category .addCategory-container label{
+  display: block;
+  margin-top: 20px;
+  color:  #008c96a4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+.addCategory-modal .add-category .addCategory-container input{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+  border: solid 1px  #008c96a4;
+}
+
+.addCategory-modal .add-category .bottom-hr{
+  border: 1px solid #008c96a4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  position: relative;
+  background-color: #008c96a4;
+}
+
+
+.addCategory-modal .add-category .addCategory-container .btn-addCategory{
+  background-color: #008c96a4;
+  color: white;
+  width: 100px;
+  position: absolute;
+  right: 10px;
+}
+
+.addCategory-modal .add-category .addCategory-container .btn-addCategory:hover{
+  cursor: pointer;
+  background-color: #006870;
+  transition: 0.5s;
 }

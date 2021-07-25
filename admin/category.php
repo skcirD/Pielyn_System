@@ -15,7 +15,7 @@ security_session();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   </head>
   <body>
       <div class="nav-bar">
@@ -24,7 +24,7 @@ security_session();
           <h1 class="pielyn-store">Inventory System | Pielyn Store</h1>
         </div>
 
-        <h4 class="user">Administrator</h4>
+        <h4 class="user"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?></h4>
 
       </div>
       <div class="wrapper">
@@ -42,27 +42,38 @@ security_session();
         </div>
       </div>
       <div class="main-content">
-
+            <h3>Manage </h3><h6>Category</h6>
+            <?php
+              delete_category();
+              add_Category()
+             ?>
+            <input class="btn-addcategory" id="btn-category" type="button" name="btn-addcategory" value="Add category">
           <div class="category-container">
             <h1 class="text-category">Category</h1>
             <table class="category-table">
                 <thead>
                     <th>Category Name</th>
-                    <th class="op">Operations</th>
+                    <th class="op">Action</th>
                 </thead>
                 <?php displayCategory(); ?>
-                <!-- <tr>
-                    <td>Lucky-Me</td>
-                    <td class="U-D">
-                      <a class="update" href="#">update</a>
-                      <a class="delete" href="#">delete</a>
-                    </td>
-                </tr> -->
-
             </table>
           </div>
-
       </div>
 
+      <div class="addCategory-modal">
+        <form class="add-category" action="" method="GET">
+          <hr class="top-hr">
+          <div class="addCategory-container">
+                <h4>Add Category <span class="modal-closebtn">&times;</span></h4>
+                <label for="">Category Name</label>
+                <input type="text" name="txt-category" placeholder="Enter category name">
+                <input class="btn-addCategory" type="submit" name="btn-addCategory" value="Add">
+          </div>
+          <hr class="bottom-hr">
+        </form>
+      </div>
+
+      <script src="../javascript/category.js" charset="utf-8"></script>
+      <script src="../javascript/jFunctions.js" charset="utf-8"></script>
   </body>
 </html>

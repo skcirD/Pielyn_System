@@ -40,9 +40,32 @@ function add_Brand(){
   }
 }
 
+function add_Category(){
+  if(isset($_GET['btn-addCategory']) && empty($_GET['txt-category'])){
+    echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Enter a category name to add <span class="closebtn">&times;</span></div>';
+  }
+  if(!empty($_GET['txt-category'])){
+    $category = $_GET['txt-category'];
+
+    $category = new add($category);
+
+    if($category->addCategory()){
+      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add Successfully <span class="closebtn">&times;</span></div>';
+    }else{
+      echo "Failed to add new category";
+    }
+  }
+}
+
+
 function displayBrand(){
   $d = new brand();
   $d->getBrandName();
+}
+
+function displayCategory(){
+  $d = new category();
+  $d->getCategoryName();
 }
 
 function delete_brand(){
@@ -56,19 +79,18 @@ function delete_brand(){
   }
 }
 
-function displayCategory(){
-  $d = new category();
-
-  foreach($d->getCategoryName() as $data){
-    echo "<tr>
-              <td>$data[category_name]</td>
-              <td>
-                <a class='update' href='#'>update</a>
-                <a class='delete' href='#'>delete</a>
-              </td>
-          </tr>";
+function delete_category(){
+  if(!empty($_GET['delete'])){
+    $d = new delete($_GET['delete']);
+    if($d->deleteCategory()){
+      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
+    }else{
+      echo "Category Delete Error!";
+    }
   }
 }
+
+
 
 function logout(){
 
