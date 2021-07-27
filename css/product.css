@@ -1,0 +1,273 @@
+
+/* CLASS............ */
+
+/* cntainer */
+.main-content{
+  display: block;
+}
+
+.main-content h3{
+  font-weight: 900;
+  display: inline;
+  color: #008D96;
+}
+
+.main-content h6{
+  color: gray;
+  display: inline;
+}
+
+.main-content .txt-addSuccess i{
+  margin-right: 3px;
+}
+
+.main-content .txt-error i{
+  margin-right: 3px;
+}
+
+.txt-addSuccess{
+  background-color: #008D96;
+  color: white;
+  width: 82.5%;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-top: 6px;
+  font-weight: bolder;
+  position: fixed;
+  display: visible;
+}
+
+.txt-error{
+  background-color: #F58220;
+  color: white;
+  width: 82.5%;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 2px;
+  margin-top: 6px;
+  font-weight: bolder;
+  position: fixed;
+  display: visible;
+}
+
+.closebtn{
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-closebtn{
+  margin-left: 15px;
+  color: #008D96;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-addproduct{
+  margin-top: 50px;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  background-color: #008D96;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.product-container{
+  width: 100%;
+  margin-top: 100px;
+  box-shadow: 1px -1px 1px 1px rgb(194, 192, 192);
+  border-radius: 3px;
+  background-color: white;
+  font-size: 12px;
+}
+
+/* label */
+.text-product{
+
+  color: #008D96;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.product-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-weight: 900;
+}
+
+.product-table td, .product-table th{
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+}
+.product-table th{
+    background-color: #008D96;
+    color: white;
+    text-align: left;
+}
+
+.table-num{
+  width: 20px;
+}
+
+.table-pcode,
+.table-barcode
+{
+  width: 15px;
+}
+
+.table-qty, .table-price, .table-reOrder{
+  width: 1%;
+  text-align: center;
+}
+
+.table-brand, .table-category{
+  width: 150px;
+}
+
+.table-description{
+  width: 350px;
+}
+
+.product-container .product-table .op{
+  text-align: center;
+  width: 150px;
+}
+
+.U-D{
+  text-align: center;
+  padding-left: 30px;
+}
+
+.update{
+  background-color: #008D96;
+  padding: 5px;
+  border-radius: 2px;
+  color: white;
+  font-weight: bolder;
+  margin-left: 15px;
+}
+
+.delete{
+  background-color:  #F58220;
+  padding: 5px;
+  border-radius: 2px;
+  color: white;
+  font-weight: bolder;
+}
+
+.update:hover{
+  background-color: #008c96a4;
+  transition: 0.5s;
+}
+.delete:hover{
+  background-color: #f8bf8d;
+  transition: 0.5s;
+}
+
+.wrapper .side-bar .product{
+  background: white;
+  transition: 0.2s;
+  color: #008c96a4;
+  margin-left: 10px;
+}
+
+
+/* MODaL CONTAINER....... */
+.addProduct-modal{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* BRAND FORM */
+.add-product{
+  width: 400px;
+  height: 165px;
+  position: relative;
+  top: 100px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.addProduct-container{
+  margin: 10px;
+}
+
+.addProduct-modal .add-product .addproduct-container h4{
+  font-size: 15px;
+  color: #008c96a4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.addProduct-modal .add-product .top-hr{
+  border: 1px solid #008c96a4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background-color: #008c96a4;
+  position: relative;
+  top: 40px;
+}
+
+.addProduct-modal .add-product .addProduct-container label{
+  display: block;
+  margin-top: 20px;
+  color:  #008c96a4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+.addProduct-modal .add-product .addProduct-container input{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+  border: solid 1px  #008c96a4;
+}
+
+.addProduct-modal .add-product .bottom-hr{
+  border: 1px solid #008c96a4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  position: relative;
+  background-color: #008c96a4;
+}
+
+.addProduct-modal .add-product .addproduct-container .btn-addProduct{
+  background-color: #008c96a4;
+  color: white;
+  width: 100px;
+  position: absolute;
+  right: 10px;
+}
+
+.addProduct-modal .add-product .addProduct-container .btn-addProduct:hover{
+  cursor: pointer;
+  background-color: #006870;
+  transition: 0.5s;
+}

@@ -52,6 +52,7 @@ security_session();
             <h1 class="text-category">Category</h1>
             <table class="category-table">
                 <thead>
+                    <th>#</th>
                     <th>Category Name</th>
                     <th class="op">Action</th>
                 </thead>

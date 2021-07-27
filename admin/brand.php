@@ -51,6 +51,7 @@ security_session();
             <h1 class="text-brand">Manage Brands</h1>
             <table class="brand-table">
                 <thead>
+                    <th>#</th>
                     <th>Brand Name</th>
                     <th class="op">Action</th>
                 </thead>

@@ -118,10 +118,15 @@
     background-color: #008D96;
     color: white;
     text-align: left;
-    width: 85%;
 }
+
+.table-num{
+  width: 20px;
+}
+
 .brand-container .brand-table .op{
   text-align: center;
+  width: 150px;
 }
 
 .U-D{

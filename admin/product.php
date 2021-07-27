@@ -10,10 +10,14 @@ security_session();
     <link rel="icon" href="images/circle-Logo1.png">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/product.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   </head>
+
   <body>
       <div class="nav-bar">
         <div class="logo">
@@ -21,7 +25,7 @@ security_session();
           <h1 class="pielyn-store">Inventory System | Pielyn Store</h1>
         </div>
 
-        <h4 class="user">Administrator</h4>
+        <h4 class="user"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?></h4>
 
       </div>
       <div class="wrapper">
@@ -39,9 +43,55 @@ security_session();
         </div>
       </div>
       <div class="main-content">
-          <h1>PRODUCTS</h1>
+            <h3>Manage </h3><h6>Products</h6>
+            <?php
 
+            ?>
+            <input class="btn-addbrand" id="btn-brand" type="button" name="btn-addbrand" value="Add Brand">
+          <div class="product-container">
+            <h1 class="text-product">Manage Products</h1>
+            <table class="product-table">
+                <thead>
+                    <th>#</th>
+                    <th>Pcode</th>
+                    <th>Barcode</th>
+                    <th>Description</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Re-order</th>
+                    <th class="op">Action</th>
+                </thead>
+                <?php displayProduct(); ?>
+            </table>
+          </div>
       </div>
 
+      <div class="addProduct-modal">
+        <form class="add-product" action="" method="GET">
+          <hr class="top-hr">
+          <div class="addProduct-container">
+                <h4>Add Product <span class="modal-closebtn">&times;</span></h4>
+                <label for="">PCode</label>
+                <input type="text" name="txt-pcode" placeholder="Enter Pcode">
+                <label for="">Barcode</label>
+                <input type="text" name="txt-barcode" placeholder="Enter Barcode">
+                <label for="">Brand Name</label>
+                <input type="text" name="txt-brand" placeholder="Description">
+                <label for="">Brand Name</label>
+                <input type="text" name="txt-brand" placeholder="brand">
+                <label for="">Brand Name</label>
+                <input type="text" name="txt-brand" placeholder="category">
+                <label for="">Brand Name</label>
+
+                <input type="text" name="txt-brand" placeholder="Enter brand name">
+                <input class="btn-addBrand" type="submit" name="btn-addBrand" value="Add">
+          </div>
+          <hr class="bottom-hr">
+        </form>
+      </div>
+  <script src="../javascript/brand.js" charset="utf-8"></script>
+  <script src="../javascript/jFunctions.js" charset="utf-8"></script>
   </body>
 </html>

@@ -68,6 +68,11 @@ function displayCategory(){
   $d->getCategoryName();
 }
 
+function displayProduct(){
+  $p = new product();
+  $p->getProducts();
+}
+
 function delete_brand(){
   if(!empty($_GET['delete'])){
     $d = new delete($_GET['delete']);

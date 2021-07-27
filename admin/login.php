@@ -30,7 +30,7 @@ require_once '../php/init.php';
 
                   <div class="password">
                       <label for="password">Password</label><br>
-                      <input class="txt-password" type="password" name="password" placeholder="• • • • • • • • •">
+                      <input class="txt-password" type="password" name="password" placeholder="Password">
                   </div>
                   <div class="btn-login">
                       <a href="#">Forgot Password?</a><br>
