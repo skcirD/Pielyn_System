@@ -2,7 +2,7 @@
 
   class config{
     private $user = "root";
-    private $password = "123456";
+    private $password = "";
     private $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE =>
     PDO::FETCH_ASSOC);
     public $pdo = null;

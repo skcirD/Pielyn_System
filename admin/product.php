@@ -45,9 +45,9 @@ security_session();
       <div class="main-content">
             <h3>Manage </h3><h6>Products</h6>
             <?php
-
+              add_Product();
             ?>
-            <input class="btn-addbrand" id="btn-brand" type="button" name="btn-addbrand" value="Add Brand">
+            <input class="btn-addproduct" id="btn-product" type="button" name="btn-addproduct" value="Add Product">
           <div class="product-container">
             <h1 class="text-product">Manage Products</h1>
             <table class="product-table">
@@ -73,25 +73,50 @@ security_session();
           <hr class="top-hr">
           <div class="addProduct-container">
                 <h4>Add Product <span class="modal-closebtn">&times;</span></h4>
-                <label for="">PCode</label>
-                <input type="text" name="txt-pcode" placeholder="Enter Pcode">
-                <label for="">Barcode</label>
-                <input type="text" name="txt-barcode" placeholder="Enter Barcode">
-                <label for="">Brand Name</label>
-                <input type="text" name="txt-brand" placeholder="Description">
-                <label for="">Brand Name</label>
-                <input type="text" name="txt-brand" placeholder="brand">
-                <label for="">Brand Name</label>
-                <input type="text" name="txt-brand" placeholder="category">
-                <label for="">Brand Name</label>
 
-                <input type="text" name="txt-brand" placeholder="Enter brand name">
-                <input class="btn-addBrand" type="submit" name="btn-addBrand" value="Add">
+                <label for="">PCode</label>
+                <input class="input-pcode" type="text" name="txt-pcode" placeholder="Enter Pcode"><br>
+
+                <label for="">Barcode</label>
+                <input class="input-barcode" type="text" name="txt-barcode" placeholder="Enter Barcode"><br>
+
+                <label for="">Description</label>
+                <input class="input-description" type="text" name="txt-description" placeholder="Description"><br>
+
+                <label for="">Brand</label>
+                <select class="select-brand" name="select-brand">
+                    <option value="">Select Brand</option>
+                    <option value="Coca-Cola">Coca-Cola</option>
+                    <option value="Wilkins">Wilkins</option>
+                    <option value="Oishi">Oishi</option>
+                    <option value="Redhorse">Redhorse</option>
+                </select>
+                <!-- <input class="input-brand" type="text" name="txt-brand" placeholder="brand"><br> -->
+                <label for="">Category</label>
+                <select class="select-category" name="select-category">
+                    <option value="">Select Category</option>
+                    <option value="Coca-Cola">Coca-Cola</option>
+                    <option value="Wilkins">Wilkins</option>
+                    <option value="Oishi">Oishi</option>
+                    <option value="Redhorse">Redhorse</option>
+                </select>
+                <!-- <input class="input-category" type="text" name="txt-brand" placeholder="category"><br> -->
+                <label for="">Quantity</label>
+                <input class="input-qty" type="text" name="txt-qty" placeholder="Quantity"><br>
+
+                <label for="">Price</label>
+                <input class="input-price" type="text" name="txt-price" placeholder="Price"><br>
+
+                <label for="">Re-Order Level</label>
+                <input class="input-reOrder" type="text" name="txt-reOrder" placeholder="Re-Order"><br>
+
+                <!-- <input class="btn-addProduct" type="submit" name="btn-addProduct" value="Add"> -->
+                <button class="btn-addProduct" type="submit" name="btn-addProduct">Add</button>
           </div>
           <hr class="bottom-hr">
         </form>
       </div>
-  <script src="../javascript/brand.js" charset="utf-8"></script>
+  <script src="../javascript/product.js" charset="utf-8"></script>
   <script src="../javascript/jFunctions.js" charset="utf-8"></script>
   </body>
 </html>

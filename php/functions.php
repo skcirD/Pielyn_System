@@ -57,6 +57,36 @@ function add_Category(){
   }
 }
 
+function add_Product(){
+
+  if(isset($_GET['btn-addProduct']) && (empty($_GET['txt-pcode']) || empty($_GET['txt-description']) || empty($_GET['select-brand']) ||
+  empty($_GET['txt-category']) || empty($_GET['txt-qty']) || empty($_GET['txt-price']) || empty($_GET['txt-reOrder'])))
+  {
+    echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Incomplete product information <span class="closebtn">&times;</span></div>';
+  }
+
+  if(!empty($_GET['txt-pcode']) && !empty($_GET['txt-description']) &&
+  $_GET['select-brand'] != null && $_GET['select-category'] != null && !empty($_GET['txt-qty']) &&
+  !empty($_GET['txt-price']) && !empty($_GET['txt-reOrder']))
+  {
+    $pcode = $_GET['txt-pcode'];
+    $barcode = $_GET['txt-barcode'];
+    $description = $_GET['txt-description'];
+    $brand = $_GET['select-brand'];
+    $category = $_GET['select-category'];
+    $qty = $_GET['txt-qty'];
+    $price = $_GET['txt-price'];
+    $reOrder = $_GET['txt-reOrder'];
+
+    $product = new addProduct($pcode, $barcode, $description, $brand, $category, $qty, $price, $reOrder);
+
+    if($product->addProduct()){
+      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add  Product Successfully <span class="closebtn">&times;</span></div>';
+    }else {
+      echo "Failed to add new product";
+    }
+  }
+}
 
 function displayBrand(){
   $d = new brand();

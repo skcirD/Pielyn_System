@@ -8,8 +8,3 @@
   });
 
   // ........................BRAND PAGE..................//
-
-  // Closebtn - Successfully removed........
-  document.querySelector('.closebtn').addEventListener("click", function(){
-    document.querySelector(".txt-addSuccess").style.display = "none";
-  });

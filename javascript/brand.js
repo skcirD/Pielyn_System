@@ -15,14 +15,6 @@ document.querySelector('.closebtn').addEventListener("click", function(){
   document.querySelector(".txt-error").style.display = "none";
 });
 
-
-
-// closeModal();
-// function closeModal(){
-//   var modal = document.querySelector('.modal-closebtn');
-//   var modal2 = document.querySelector(".addBrand-modal");
-//
-//   modal.addEventListener("click", function(){
-//     modal2.style.display = "none";
-//   });
-// }
+document.querySelector('.closebtn').addEventListener("click", function(){
+  document.querySelector(".txt-addSuccess").style.display = "none";
+});

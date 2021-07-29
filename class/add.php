@@ -37,25 +37,4 @@
     }
   }
 }
-
-function addProduct(){
-  
-}
-
-
-  //   function addBrand(){
-  //     $con = $this->con();
-  //
-  //     $sql = "INSERT INTO  `brand` (`brand_name`) VALUES ('$this->name')";
-  //     $data = $con->prepare($sql);
-  //
-  //     if($data->execute()){
-  //       return true;
-  //     }else{
-  //       return false;
-  //     }
-  //   }
-  // }
-
-
- ?>
+?>

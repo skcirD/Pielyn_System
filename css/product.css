@@ -202,8 +202,8 @@
 
 /* BRAND FORM */
 .add-product{
-  width: 400px;
-  height: 165px;
+  width: 500px;
+  height: 360px;
   position: relative;
   top: 100px;
   background-color: white;
@@ -232,18 +232,60 @@
 }
 
 .addProduct-modal .add-product .addProduct-container label{
-  display: block;
   margin-top: 20px;
+  margin-left: 20px;
   color:  #008c96a4;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
+  font-size: 11px;
+}
+
+
+
+.addProduct-modal .add-product .addProduct-container .input-pcode{
+  margin-top: 30px;
+  margin-left: 48px;
+}
+
+.addProduct-modal .add-product .addProduct-container .input-barcode{
+  margin-left: 38px;
+}
+
+.addProduct-modal .add-product .addProduct-container .input-description{
+  margin-left: 20px;
+}
+
+.addProduct-modal .add-product .addProduct-container .select-brand{
+  border: 1px solid #008c96a4;
+  margin-left: 51px;
+  width: 70%;
+  padding: 3px;
+}
+
+.addProduct-modal .add-product .addProduct-container .select-category{
+  border: 1px solid #008c96a4;
+  margin-top: 2px;
+  margin-left: 34px;
+  width: 70%;
+  padding: 3px;
+}
+
+.addProduct-modal .add-product .addProduct-container .input-qty{
+  margin-left: 36px;
+}
+
+.addProduct-modal .add-product .addProduct-container .input-price{
+margin-left: 56px;
+}
+
+.addProduct-modal .add-product .addProduct-container .input-reOrder{
+  /* margin-left: 30px; */
 }
 
 .addProduct-modal .add-product .addProduct-container input{
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 70%;
   padding: 5px;
   font-size: 12px;
   border: solid 1px  #008c96a4;
@@ -255,15 +297,20 @@
   border-left: 0;
   border-right: 0;
   position: relative;
+  bottom: -5px;
   background-color: #008c96a4;
 }
 
-.addProduct-modal .add-product .addproduct-container .btn-addProduct{
+ .btn-addProduct{
+  border: 1px solid #008c96a4;
   background-color: #008c96a4;
   color: white;
+  font-weight: bolder;
+  margin-top: 30px;
   width: 100px;
+  padding: 3px;
   position: absolute;
-  right: 10px;
+  right: 45px;
 }
 
 .addProduct-modal .add-product .addProduct-container .btn-addProduct:hover{
