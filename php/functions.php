@@ -59,11 +59,11 @@ function add_Category(){
 
 function add_Product(){
 
-  if(isset($_GET['btn-addProduct']) && (empty($_GET['txt-pcode']) || empty($_GET['txt-description']) || empty($_GET['select-brand']) ||
-  empty($_GET['txt-category']) || empty($_GET['txt-qty']) || empty($_GET['txt-price']) || empty($_GET['txt-reOrder'])))
-  {
-    echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Incomplete product information <span class="closebtn">&times;</span></div>';
-  }
+  // if(isset($_GET['btn-addProduct']) && (empty($_GET['txt-pcode']) || empty($_GET['txt-description']) || empty($_GET['select-brand']) ||
+  // empty($_GET['txt-category']) || empty($_GET['txt-qty']) || empty($_GET['txt-price']) || empty($_GET['txt-reOrder'])))
+  // {
+  //   echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Incomplete product information <span class="closebtn">&times;</span></div>';
+  // }
 
   if(!empty($_GET['txt-pcode']) && !empty($_GET['txt-description']) &&
   $_GET['select-brand'] != null && $_GET['select-category'] != null && !empty($_GET['txt-qty']) &&
@@ -82,9 +82,9 @@ function add_Product(){
 
     if($product->addProduct()){
       echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add  Product Successfully <span class="closebtn">&times;</span></div>';
-    }else {
-      echo "Failed to add new product";
     }
+  }else{
+    echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Incomplete product information <span class="closebtn">&times;</span></div>';
   }
 }
 

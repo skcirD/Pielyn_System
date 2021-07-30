@@ -75,13 +75,13 @@ security_session();
                 <h4>Add Product <span class="modal-closebtn">&times;</span></h4>
 
                 <label for="">PCode</label>
-                <input class="input-pcode" type="text" name="txt-pcode" placeholder="Enter Pcode"><br>
+                <input class="input-pcode" type="text" name="txt-pcode"><br>
 
                 <label for="">Barcode</label>
-                <input class="input-barcode" type="text" name="txt-barcode" placeholder="Enter Barcode"><br>
+                <input class="input-barcode" type="text" name="txt-barcode"><br>
 
                 <label for="">Description</label>
-                <input class="input-description" type="text" name="txt-description" placeholder="Description"><br>
+                <input class="input-description" type="text" name="txt-description"><br>
 
                 <label for="">Brand</label>
                 <select class="select-brand" name="select-brand">
@@ -102,13 +102,13 @@ security_session();
                 </select>
                 <!-- <input class="input-category" type="text" name="txt-brand" placeholder="category"><br> -->
                 <label for="">Quantity</label>
-                <input class="input-qty" type="text" name="txt-qty" placeholder="Quantity"><br>
+                <input class="input-qty" type="text" name="txt-qty"><br>
 
                 <label for="">Price</label>
-                <input class="input-price" type="text" name="txt-price" placeholder="Price"><br>
+                <input class="input-price" type="text" name="txt-price"><br>
 
                 <label for="">Re-Order Level</label>
-                <input class="input-reOrder" type="text" name="txt-reOrder" placeholder="Re-Order"><br>
+                <input class="input-reOrder" type="text" name="txt-reOrder"><br>
 
                 <!-- <input class="btn-addProduct" type="submit" name="btn-addProduct" value="Add"> -->
                 <button class="btn-addProduct" type="submit" name="btn-addProduct">Add</button>
@@ -117,6 +117,5 @@ security_session();
         </form>
       </div>
   <script src="../javascript/product.js" charset="utf-8"></script>
-  <script src="../javascript/jFunctions.js" charset="utf-8"></script>
   </body>
 </html>
