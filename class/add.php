@@ -1,6 +1,4 @@
 <?php
-
-
   class add extends config
   {
     public $name;
@@ -8,7 +6,6 @@
     {
       $this->name = $name;
     }
-
 
     function addBrand(){
       $con = $this->con();
@@ -22,7 +19,6 @@
         return false;
       }
     }
-
 
   function addCategory(){
     $con = $this->con();

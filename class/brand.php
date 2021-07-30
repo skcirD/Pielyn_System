@@ -13,7 +13,6 @@
 
       $i = 1;
       foreach ($result as $data) {
-
         echo "<tr>";
         echo     "<td class='table-num'>$i</td>";
         echo     "<td>$data[brand_name]</td>
@@ -24,9 +23,7 @@
               </tr>";
               $i ++;
       }
-
     }
-
   }
 
  ?>

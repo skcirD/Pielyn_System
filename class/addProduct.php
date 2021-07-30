@@ -10,7 +10,6 @@
     public $price;
     public $reOrder;
 
-
     function __construct($pcode, $barcode, $description, $brand, $category, $qty, $price, $reOrder)
     {
       $this->pcode = $pcode;
@@ -35,9 +34,5 @@
         return false;
       }
     }
-
   }
-
-
-
  ?>

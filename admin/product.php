@@ -85,22 +85,16 @@ security_session();
 
                 <label for="">Brand</label>
                 <select class="select-brand" name="select-brand">
-                    <option value="">Select Brand</option>
-                    <option value="Coca-Cola">Coca-Cola</option>
-                    <option value="Wilkins">Wilkins</option>
-                    <option value="Oishi">Oishi</option>
-                    <option value="Redhorse">Redhorse</option>
+                    <option value="">--Select Brand--</option>
+                    <?php display_brand_option(); ?>
                 </select>
-                <!-- <input class="input-brand" type="text" name="txt-brand" placeholder="brand"><br> -->
+
                 <label for="">Category</label>
                 <select class="select-category" name="select-category">
-                    <option value="">Select Category</option>
-                    <option value="Coca-Cola">Coca-Cola</option>
-                    <option value="Wilkins">Wilkins</option>
-                    <option value="Oishi">Oishi</option>
-                    <option value="Redhorse">Redhorse</option>
+                    <option value="">--Select Category--</option>
+                    <?php display_categ_option(); ?>
                 </select>
-                <!-- <input class="input-category" type="text" name="txt-brand" placeholder="category"><br> -->
+
                 <label for="">Quantity</label>
                 <input class="input-qty" type="text" name="txt-qty"><br>
 
@@ -110,7 +104,6 @@ security_session();
                 <label for="">Re-Order Level</label>
                 <input class="input-reOrder" type="text" name="txt-reOrder"><br>
 
-                <!-- <input class="btn-addProduct" type="submit" name="btn-addProduct" value="Add"> -->
                 <button class="btn-addProduct" type="submit" name="btn-addProduct">Add</button>
           </div>
           <hr class="bottom-hr">
