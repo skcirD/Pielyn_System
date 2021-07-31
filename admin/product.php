@@ -45,6 +45,7 @@ security_session();
       <div class="main-content">
             <h3>Manage </h3><h6>Products</h6>
             <?php
+              delete_product();
               add_Product();
             ?>
             <input class="btn-addproduct" id="btn-product" type="button" name="btn-addproduct" value="Add Product">

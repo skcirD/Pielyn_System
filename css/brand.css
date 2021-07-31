@@ -86,6 +86,9 @@
   cursor: pointer;
   border-radius: 2px;
 }
+.btn-addbrand:hover{
+  background-color: #008c96a4;
+}
 
 .brand-container{
   width: 100%;
@@ -140,6 +143,7 @@
   border-radius: 2px;
   color: white;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 .delete{
@@ -246,8 +250,22 @@
   right: 10px;
 }
 
+.addBrand-modal .add-brand .addBrand-container .btn-updateBrand{
+  background-color: #008c96a4;
+  color: white;
+  width: 100px;
+  position: absolute;
+  right: 120px;
+  cursor: pointer;
+}
+
 .addBrand-modal .add-brand .addBrand-container .btn-addBrand:hover{
   cursor: pointer;
+  background-color: #006870;
+  transition: 0.5s;
+}
+
+.addBrand-modal .add-brand .addBrand-container .btn-updateBrand:hover{
   background-color: #006870;
   transition: 0.5s;
 }

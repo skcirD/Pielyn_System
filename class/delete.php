@@ -34,6 +34,19 @@
         return false;
       }
     }
+
+    public function deleteProduct(){
+      $con = $this->con();
+
+      $sql = $con->prepare("DELETE FROM `product` WHERE `product_id` = $this->id");
+      $data = $sql->execute();
+
+      if($data){
+        return true;
+      }else{
+        return false;
+      }
+    }
   }
 
  ?>

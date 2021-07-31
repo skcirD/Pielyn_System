@@ -49,7 +49,7 @@ security_session();
             <input class="btn-addbrand" id="btn-brand" type="button" name="btn-addbrand" value="Add Brand">
           <div class="brand-container">
             <h1 class="text-brand">Manage Brands</h1>
-            <table class="brand-table">
+            <table class="brand-table" id="brand-table">
                 <thead>
                     <th>#</th>
                     <th>Brand Name</th>
@@ -66,8 +66,9 @@ security_session();
           <div class="addBrand-container">
                 <h4>Add Brand <span class="modal-closebtn">&times;</span></h4>
                 <label for="">Brand Name</label>
-                <input type="text" name="txt-brand" placeholder="Enter brand name">
-                <input class="btn-addBrand" type="submit" name="btn-addBrand" value="Add">
+                <input class="input-brand" type="text" name="txt-brand" placeholder="Enter brand name">
+                <input class="btn-addBrand" id="btn-addBrand" type="submit" name="btn-addBrand" value="Add">
+                <input class="btn-updateBrand" id="btn-updateBrand" type="submit" name="btn-updateBrand" value="Update">
           </div>
           <hr class="bottom-hr">
         </form>

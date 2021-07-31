@@ -144,6 +144,16 @@ function delete_category(){
     }
   }
 }
+// DELETE PRODUCT
+function delete_product(){
+  if(!empty($_GET['delete'])){
+    $delete = new delete($_GET['delete']);
+
+    if($delete->deleteProduct()){
+      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
+    }
+  }
+}
 
 // BACK IN LOGIN FORM
 function logout(){
