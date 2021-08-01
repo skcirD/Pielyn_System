@@ -11,6 +11,7 @@ security_session();
     <link rel="icon" href="images/circle-Logo1.png">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -22,7 +23,7 @@ security_session();
           <h1 class="pielyn-store">Inventory System | Pielyn Store</h1>
         </div>
 
-        <h4 class="user"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?></h4>
+        <h4 class="user"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?><a href="logout.php"> -> Logout</a></h4>
 
       </div>
       <div class="wrapper">
@@ -41,7 +42,28 @@ security_session();
         </div>
       </div>
       <div class="main-content">
-            <a href="logout.php">Logout</a>
+          <div class="container">
+              <div class="sales-con">
+                  <h1>1200</h1>
+                  <h5>DAILY SALES</h5>
+                  <p>Total daily sales recorded in the database</p>
+              </div>
+              <div class="product-con">
+                  <h1>1200</h1>
+                  <h5>PRODUCT LINE</h5>
+                  <p>Total product line recorded in the database</p>
+              </div>
+              <div class="stockOnHand-con">
+                  <h1>0</h1>
+                  <h5>STOCK ON HAND</h5>
+                  <p>Total stock on hand in the database</p>
+              </div>
+              <div class="criticalItem-con">
+                  <h1>0</h1>
+                  <h5>CRITICAL ITEMS</h5>
+                  <p>Total critical Items</p>
+              </div>
+          </div>
 
       </div>
 

@@ -1,0 +1,64 @@
+h1{
+  text-align: center;
+}
+.main-content{
+    width: 82.5%;
+    height: 530px;
+    display: inline-flex;
+    position: fixed;
+    margin-left: 210px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.container{
+  margin-left: 100px;
+  padding-top: 30px;
+}
+
+
+/* SALES CONTAINER */
+.sales-con{
+  background-color: #FF6452;
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+  text-align: left;
+  border-radius: 3px;
+}
+
+/* PRODUCT LINE CONTAINER */
+.product-con{
+  background-color: #5EBCF3;
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+  text-align: left;
+  border-radius: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.stockOnHand-con{
+  background-color: #FFB936;
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+  text-align: left;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+
+.criticalItem-con{
+  background-color: #74B643;
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  top: -20px;
+  border-radius: 3px;
+}

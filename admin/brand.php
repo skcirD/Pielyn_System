@@ -56,6 +56,7 @@ security_session();
                     <th class="op">Action</th>
                 </thead>
                 <?php displayBrand(); ?>
+
             </table>
           </div>
       </div>
@@ -67,13 +68,42 @@ security_session();
                 <h4>Add Brand <span class="modal-closebtn">&times;</span></h4>
                 <label for="">Brand Name</label>
                 <input class="input-brand" type="text" name="txt-brand" placeholder="Enter brand name">
+                <input class="btn-addBrand" id="addBrand" type="submit" name="btn-addBrand" value="Add">
+                <!-- <input class="btn-updateBrand" id="btn-updateBrand" type="submit" name="btn-updateBrand" value="Update"> -->
+          </div>
+          <hr class="bottom-hr">
+        </form>
+      </div>
+
+      <!-- UPDATE MODAL -->
+      <div class="updateBrand-modal">
+        <form class="update-brand" action="" method="GET">
+          <hr class="top-hr">
+          <div class="updateBrand-container">
+                <h4>Update Brand <span class="modal-closebtn">&times;</span></h4>
+                <label for="">Brand Name</label>
+                <input class="updateInput-brand" type="text" name="txt-brand" placeholder="Edit brand name">
+                <input class="btn-updateBrand" id="updateBrand" type="submit" name="btn-updateBrand" value="Update">
+                <!-- <input class="btn-updateBrand" id="updateBrand" type="submit" name="btn-updateBrand" value="Update"> -->
+          </div>
+          <hr class="bottom-hr">
+        </form>
+      </div>
+
+      <!-- <div class="updateBrand-modal">
+        <form class="update-brand" action="" method="GET">
+          <hr class="top-hr">
+          <div class="updateBrand-container">
+                <h4>Update Brand <span class="modal-closebtn">&times;</span></h4>
+                <label for="">Update Name</label>
+                <input class="input-brand" type="text" name="txt-brand" placeholder="Enter brand name">
                 <input class="btn-addBrand" id="btn-addBrand" type="submit" name="btn-addBrand" value="Add">
                 <input class="btn-updateBrand" id="btn-updateBrand" type="submit" name="btn-updateBrand" value="Update">
           </div>
           <hr class="bottom-hr">
         </form>
-      </div>
+      </div> -->
       <script src="../javascript/brand.js" charset="utf-8"></script>
-      <script src="../javascript/jFunctions.js" charset="utf-8"></script>
+      <!-- <script src="../javascript/jFunctions.js" charset="utf-8"></script> -->
   </body>
 </html>

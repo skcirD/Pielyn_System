@@ -27,7 +27,7 @@ function add_Brand(){
   if(isset($_GET['btn-addBrand']) && empty($_GET['txt-brand'])){
     echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Enter a brand name to add <span class="closebtn">&times;</span></div>';
   }
-  if(!empty($_GET['txt-brand'])){
+  else if(isset($_GET['btn-addBrand']) && !empty($_GET['txt-brand'])){
     $brandName = $_GET['txt-brand'];
 
     $brand = new add($brandName);
@@ -38,7 +38,16 @@ function add_Brand(){
       echo "Failed to add new brand";
     }
   }
+  // else if(isset($_GET['btn-updateBrand']) && empty($_GET['txt-brand'])){
+  //   echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Enter a brand name to add <span class="closebtn">&times;</span></div>';
+  // }
+  // else if(isset($_GET['btn-updateBrand']) && !empty($_GET['txt-brand'])){
+  //   $b = $_GET['txt-brand'];
+  //   echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add Successfully <span class="closebtn">&times;</span></div>';
+  // }
 }
+
+// UPDATE BRAND
 
 // ADD NEW CATEGORY
 function add_Category(){

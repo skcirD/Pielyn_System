@@ -171,7 +171,7 @@
 }
 
 
-/* MODaL CONTAINER....... */
+/* .........................................................MODaL CONTAINER....... */
 .addBrand-modal{
   position: absolute;
   top: 0;
@@ -250,14 +250,14 @@
   right: 10px;
 }
 
-.addBrand-modal .add-brand .addBrand-container .btn-updateBrand{
+/* .addBrand-modal .add-brand .addBrand-container .btn-updateBrand{
   background-color: #008c96a4;
   color: white;
   width: 100px;
   position: absolute;
   right: 120px;
   cursor: pointer;
-}
+} */
 
 .addBrand-modal .add-brand .addBrand-container .btn-addBrand:hover{
   cursor: pointer;
@@ -265,7 +265,95 @@
   transition: 0.5s;
 }
 
-.addBrand-modal .add-brand .addBrand-container .btn-updateBrand:hover{
+/* .addBrand-modal .add-brand .addBrand-container .btn-updateBrand:hover{
+  background-color: #006870;
+  transition: 0.5s;
+} */
+
+
+/* ............................................................................................................ */
+
+/* UPDATE MODaL CONTAINER....... */
+.updateBrand-modal{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* BRAND FORM */
+.update-brand{
+  width: 400px;
+  height: 165px;
+  position: relative;
+  top: 100px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.updateBrand-container{
+  margin: 10px;
+}
+
+.updateBrand-modal .update-brand .updateBrand-container h4{
+  font-size: 15px;
+  color: #008c96a4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.updateBrand-modal .update-brand .top-hr{
+  border: 1px solid #008c96a4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background-color: #008c96a4;
+  position: relative;
+  top: 40px;
+}
+
+.updateBrand-modal .update-brand .updateBrand-container label{
+  display: block;
+  margin-top: 20px;
+  color:  #008c96a4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+.updateBrand-modal .update-brand .updateBrand-container input{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+  border: solid 1px  #008c96a4;
+}
+
+.updateBrand-modal .update-brand .bottom-hr{
+  border: 1px solid #008c96a4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  position: relative;
+  background-color: #008c96a4;
+}
+
+.updateBrand-modal .update-brand .updateBrand-container .btn-updateBrand{
+  background-color: #008c96a4;
+  color: white;
+  width: 100px;
+  position: absolute;
+  right: 10px;
+}
+
+.updateBrand-modal .update-brand .updateBrand-container .btn-updateBrand:hover{
+  cursor: pointer;
   background-color: #006870;
   transition: 0.5s;
 }

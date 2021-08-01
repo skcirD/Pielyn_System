@@ -1,85 +1,48 @@
 
-// btnAddBrband - addbrand (MODAL)...................
-document.getElementById('btn-brand').addEventListener("click", function(){
-  document.querySelector(".addBrand-modal").style.display = "flex";
-  document.getElementById("btn-addBrand").disabled = false;
+openAddBrandModal();
+closeBrandModal();
+closeErrorMesg();
+closeSuccessMesg();
 
-document.querySelector('.input-brand').placeholder = "Enter brand name";
 
-  document.getElementById("btn-updateBrand").disabled = true;
-  document.getElementById("btn-updateBrand").style.background = "gray";
+// ..........................................MY FUNCTIONS......................................................
 
-  document.getElementById("btn-addBrand").style.background = "#008c96a4";
-  document.getElementById("btn-addBrand").addEventListener('mouseenter', () =>
-    document.getElementById("btn-addBrand").style.background = "#006870");
-    document.getElementById("btn-addBrand").addEventListener('mouseleave', () =>
-      document.getElementById("btn-addBrand").style.background = "#008c96a4");
+// OPEN BRAND MODEL
+function openAddBrandModal(){
+  var btnBrand = document.getElementById('btn-brand');
+  var addBrandModal = document.querySelector('.addBrand-modal');
 
-});
-
-// for(i = 0; i<document.querySelectorAll('.update').length; i++){
-//   document.querySelectorAll('.update')[i].addEventListener("click", function(){
-//         document.getElementById("btn-addBrand").disabled = true;
-//         document.getElementById("btn-updateBrand").disabled = false;
-//         document.getElementById("btn-addBrand").style.background = "gray";
-//         document.querySelector(".addBrand-modal").style.display = "flex";
-//
-//         document.querySelector('.input-brand').placeholder = brand;
-//
-//         document.getElementById("btn-updateBrand").style.background = "#008c96a4";
-//         document.getElementById("btn-updateBrand").addEventListener('mouseenter', () =>
-//           document.getElementById("btn-updateBrand").style.background = "#006870");
-//           document.getElementById("btn-updateBrand").addEventListener('mouseleave', () =>
-//             document.getElementById("btn-updateBrand").style.background = "#008c96a4");
-//   });
-// }
-
-nameOfBrand();
-function nameOfBrand(){
-  for(i = 0; i<document.querySelectorAll('.update').length; i++){
-
-    brandName(i);
-
+  btnBrand.onclick = function(){
+    addBrandModal.style.display = "flex";
   }
 }
 
-function brandName(n){
-      document.querySelectorAll('.update')[n].addEventListener("click", function(){
-        var brand = document.querySelectorAll('.brandName')[n].innerHTML;
-        document.querySelector('.input-brand').placeholder = brand;
-                document.getElementById("btn-addBrand").disabled = true;
-                document.getElementById("btn-updateBrand").disabled = false;
-                document.getElementById("btn-addBrand").style.background = "gray";
-                document.querySelector(".addBrand-modal").style.display = "flex";
+// close BRAND MODAL
+function closeBrandModal(){
+  var modalCloseBtn = document.querySelector('.modal-closebtn');
+  var addBrandModal = document.querySelector('.addBrand-modal');
 
-
-
-                document.getElementById("btn-updateBrand").style.background = "#008c96a4";
-                document.getElementById("btn-updateBrand").addEventListener('mouseenter', () =>
-                  document.getElementById("btn-updateBrand").style.background = "#006870");
-                  document.getElementById("btn-updateBrand").addEventListener('mouseleave', () =>
-                    document.getElementById("btn-updateBrand").style.background = "#008c96a4");
-      });
+  modalCloseBtn.onclick = function(){
+    addBrandModal.style.display = "none";
+  }
 }
 
-// modal form btnclose...
-document.querySelector('.modal-closebtn').addEventListener("click", function(){
-  document.querySelector(".addBrand-modal").style.display = "none";
-});
-
-// close alert error message
-document.querySelector('.closebtn').addEventListener("click", function(){
-  document.querySelector(".txt-error").style.display = "none";
-});
-// Close alert susscess mesg
-document.querySelector('.closebtn').addEventListener("click", function(){
-  document.querySelector(".txt-addSuccess").style.display = "none";
-});
+function closeErrorMesg(){
+  var txtError = document.querySelector('.txt-error');
+  var btnCloseError = document.querySelector('.closebtn');
 
 
-// BTN UPDATE - to show addbrand modal............
-// for(i = 0; i<document.querySelectorAll('.brandName')[i].length; i++){
-//   var brandName = document.querySelectorAll(".brandName")[i].innerHTML;
-//
-//   alert(branName);
-// }
+  btnCloseError.onclick = function(){
+    txtError.style.display = "none";
+  }
+}
+
+function closeSuccessMesg(){
+  var txtSuccess = document.querySelector('.txt-addSuccess');
+  var btnCloseError = document.querySelector('.closebtns');
+
+
+  btnCloseError.onclick = function(){
+    txtSuccess.style.display = "none";
+  }
+}
