@@ -2,8 +2,8 @@
 
 function login(){
   session_start();
-
-  if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+// $_SESSION['status'] == 'invalid' ||
+  if(empty($_SESSION['status'])){
     // SET DEFAULT INVALID
     $_SESSION['status'] = 'invalid';
   }
@@ -193,4 +193,24 @@ function security_session(){
     pathTo('admin', 'login');
   }
 }
+
+
+
+
+
+
+
+###########################################################CASHIER FUNCTIONS#####################################################
+
+function cashier_Login(){
+  if(isset($_POST['btn-login'])){
+    $username = $_POST['userName'];
+    $password = md5($_POST['password']);
+
+    $cashier = new login($username, $password);
+    $cashier->cashierLogin();
+  }
+}
+
+
 ?>

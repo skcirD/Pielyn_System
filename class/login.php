@@ -35,5 +35,25 @@
               </div>';
       }
     }
+
+    public function cashierLogin(){
+      $con = $this->con();
+      $sql = $con->prepare("SELECT * FROM cashier WHERE username=? AND password=? ");
+      $sql->execute([$this->username, $this->password]);
+      $cashier = $sql->fetch();
+      $total = $sql->rowCount();
+
+      if($total >0){
+          header("Location: pos.php");
+      }
+      else{
+        echo "Failed to login";
+      }
+    }
+
+
+
+
+
   }
 ?>

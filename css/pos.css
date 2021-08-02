@@ -1,0 +1,40 @@
+
+
+
+
+body{
+  margin: 0;
+}
+
+
+
+/* -----HEADER CONTAINER-----*/
+
+.header-con{
+  border: solid 1px black;
+  height: 100px;
+  background-color: orange;
+}
+
+
+
+/* -----BODY CONTAINER-----*/
+
+.body-con{
+  border: solid 1px red;
+  background-color: yellow;
+  height: 400px;
+}
+
+ th{
+  border: solid 1px red;
+}
+
+
+
+/* -----FOOTER CONTAINER-----*/
+.footer-con{
+  border: solid 1px green;
+  background-color: blue;
+  height: 110px;
+}

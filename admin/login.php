@@ -5,7 +5,7 @@ require_once '../php/init.php';
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Pielyn - Login</title>
     <link rel="icon" href="images/circle-Logo1.png">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
