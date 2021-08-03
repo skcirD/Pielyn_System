@@ -1,0 +1,24 @@
+
+input{
+  margin-top: 5px;
+  padding: 5px;
+  width: 200px;
+}
+
+.main-content .account-con .head-con h3{
+  display: inline-block;
+}
+
+.account-con{
+  position: relative;
+  top: 200px;
+}
+
+.account-con .head-con{
+  margin-bottom: 50px;
+}
+
+.account-con .form-con
+{
+    margin-left: 20px;
+}

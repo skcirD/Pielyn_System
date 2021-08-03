@@ -94,6 +94,26 @@ function add_Product(){
   }
 }
 
+// ADD NEW USER, ADMIN and cashier
+function add_user(){
+  if(isset($_POST['btn-create'])){
+    $username = $_POST['userName'];
+    $password = md5($_POST['password']);
+    $firstname = $_POST['firstName'];
+    $lastname = $_POST['lastName'];
+
+    if(!empty($username) && !empty($password) && !empty($firstname) && !empty($lastname)){
+      $user = new create_account($username, $password, $firstname, $lastname);
+      $user->createAccount();
+      echo "Successfully add account";
+    }
+    else{
+      echo "PLEASE FILL UP THE BLANKS";
+    }
+
+  }
+}
+
 // DISPLAY BRAND IN TABLE
 function displayBrand(){
   $d = new brand();

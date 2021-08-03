@@ -36,7 +36,7 @@ security_session();
               <li><a href="stock_entry.php"><i class="fas fa-clipboard-list"></i>Stock Entry</a></li>
               <li><a href="stock_adjustment.php"><i class="fas fa-chart-pie"></i>Stock Adjustment</a></li>
               <li><a href="reports.php"><i class="fas fa-database"></i></i>Reports</a></li>
-              <li><a href="settings.php"><i class="fas fa-cog"></i></i>Settings</a></li>
+              <li><a href="user_settings.php"><i class="fas fa-cog"></i></i>User Settings</a></li>
             </ul>
         </div>
       </div>
