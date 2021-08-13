@@ -16,6 +16,8 @@ security_session();
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- for DATATABLE -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   </head>
 
   <body>
@@ -51,7 +53,7 @@ security_session();
             <input class="btn-addproduct" id="btn-product" type="button" name="btn-addproduct" value="Add Product">
           <div class="product-container">
             <h1 class="text-product">Manage Products</h1>
-            <table class="product-table">
+            <table class="product-table display" id="example" >
                 <thead>
                     <th>#</th>
                     <th>Pcode</th>
@@ -76,40 +78,53 @@ security_session();
                 <h4>Add Product <span class="modal-closebtn">&times;</span></h4>
 
                 <label for="">PCode</label>
-                <input class="input-pcode" type="text" name="txt-pcode"><br>
+                <input class="input-pcode" type="text" name="txt-pcode" required><br>
 
                 <label for="">Barcode</label>
                 <input class="input-barcode" type="text" name="txt-barcode"><br>
 
                 <label for="">Description</label>
-                <input class="input-description" type="text" name="txt-description"><br>
+                <input class="input-description" type="text" name="txt-description" required><br>
 
                 <label for="">Brand</label>
-                <select class="select-brand" name="select-brand">
+                <select class="select-brand" name="select-brand"  required>
                     <option value="">--Select Brand--</option>
                     <?php display_brand_option(); ?>
                 </select>
 
                 <label for="">Category</label>
-                <select class="select-category" name="select-category">
+                <select class="select-category" name="select-category"  required>
                     <option value="">--Select Category--</option>
                     <?php display_categ_option(); ?>
                 </select>
 
                 <label for="">Quantity</label>
-                <input class="input-qty" type="text" name="txt-qty"><br>
+                <input class="input-qty" type="text" name="txt-qty"  required><br>
 
                 <label for="">Price</label>
-                <input class="input-price" type="text" name="txt-price"><br>
+                <input class="input-price" type="text" name="txt-price"  required><br>
 
                 <label for="">Re-Order Level</label>
-                <input class="input-reOrder" type="text" name="txt-reOrder"><br>
+                <input class="input-reOrder" type="text" name="txt-reOrder"  required><br>
 
                 <button class="btn-addProduct" type="submit" name="btn-addProduct">Add</button>
           </div>
           <hr class="bottom-hr">
         </form>
       </div>
+
+
+
   <script src="../javascript/product.js" charset="utf-8"></script>
+  <!-- for DATATABLE -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" charset="utf-8"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" charset="utf-8"></script>
   </body>
 </html>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>

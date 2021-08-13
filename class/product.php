@@ -25,7 +25,7 @@
                   <td class='table-price'>$data[price].00</td>
                   <td class='table-reOrder'>$data[re_order]</td>
                   <td>
-                      <a class='update' href='product.php?update=$data[product_id]'>update</a>
+                      <a class='update' href='update_product.php?update=$data[product_id]'>update</a>
                       <a class='delete' href='product.php?delete=$data[product_id]'>delete</a>
                   </td>
               </tr>";

@@ -86,10 +86,12 @@ function add_Product(){
       $product = new addProduct($pcode, $barcode, $description, $brand, $category, $qty, $price, $reOrder);
 
       if($product->addProduct()){
-        echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add  Product Successfully <span class="closebtn">&times;</span></div>';
+        // echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add  Product Successfully <span class="closebtn">&times;</span></div>';
+        echo '<script>alert("Successfuly added Product.")</script>';
       }
     }else{
         echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Incomplete product information <span class="closebtn">&times;</span></div>';
+        // echo '<script>alert("Failed to add Product.")</script>';
     }
   }
 }
@@ -179,7 +181,8 @@ function delete_product(){
     $delete = new delete($_GET['delete']);
 
     if($delete->deleteProduct()){
-      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
+      // echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
+      echo '<script>alert("Deleted Successfuly")</script>';
     }
   }
 }

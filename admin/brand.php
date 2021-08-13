@@ -16,6 +16,8 @@ security_session();
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- for DATATABLE -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 
   </head>
   <body>
@@ -49,46 +51,49 @@ security_session();
             <input class="btn-addbrand" id="btn-brand" type="button" name="btn-addbrand" value="Add Brand">
           <div class="brand-container">
             <h1 class="text-brand">Manage Brands</h1>
-            <table class="brand-table" id="brand-table">
+            <table class="display" id="example" style="width:100%">
                 <thead>
-                    <th>#</th>
-                    <th>Brand Name</th>
-                    <th class="op">Action</th>
+                    <tr>
+                        <th>#</th>
+                        <th>Brand Name</th>
+                        <th class="op">Action</th>
+                    </tr>
                 </thead>
-                <?php displayBrand(); ?>
-
+                <tbody>
+                    <?php  displayBrand(); ?>
+                </tbody>
             </table>
           </div>
       </div>
 
-      <div class="addBrand-modal">
+      <!-- <div class="addBrand-modal">
         <form class="add-brand" action="" method="GET">
           <hr class="top-hr">
           <div class="addBrand-container">
                 <h4>Add Brand <span class="modal-closebtn">&times;</span></h4>
                 <label for="">Brand Name</label>
                 <input class="input-brand" type="text" name="txt-brand" placeholder="Enter brand name">
-                <input class="btn-addBrand" id="addBrand" type="submit" name="btn-addBrand" value="Add">
+                <input class="btn-addBrand" id="addBrand" type="submit" name="btn-addBrand" value="Add"> -->
                 <!-- <input class="btn-updateBrand" id="btn-updateBrand" type="submit" name="btn-updateBrand" value="Update"> -->
-          </div>
+          <!-- </div>
           <hr class="bottom-hr">
         </form>
-      </div>
+      </div> -->
 
       <!-- UPDATE MODAL -->
-      <div class="updateBrand-modal">
+      <!-- <div class="updateBrand-modal">
         <form class="update-brand" action="" method="GET">
           <hr class="top-hr">
           <div class="updateBrand-container">
                 <h4>Update Brand <span class="modal-closebtn">&times;</span></h4>
                 <label for="">Brand Name</label>
                 <input class="updateInput-brand" type="text" name="txt-brand" placeholder="Edit brand name">
-                <input class="btn-updateBrand" id="updateBrand" type="submit" name="btn-updateBrand" value="Update">
+                <input class="btn-updateBrand" id="updateBrand" type="submit" name="btn-updateBrand" value="Update"> -->
                 <!-- <input class="btn-updateBrand" id="updateBrand" type="submit" name="btn-updateBrand" value="Update"> -->
-          </div>
+          <!-- </div>
           <hr class="bottom-hr">
         </form>
-      </div>
+      </div> -->
 
       <!-- <div class="updateBrand-modal">
         <form class="update-brand" action="" method="GET">
@@ -103,7 +108,15 @@ security_session();
           <hr class="bottom-hr">
         </form>
       </div> -->
+
       <script src="../javascript/brand.js" charset="utf-8"></script>
-      <!-- <script src="../javascript/jFunctions.js" charset="utf-8"></script> -->
+      <!-- for DATATABLE -->
+      <script src="https://code.jquery.com/jquery-3.5.1.js" charset="utf-8"></script>
+      <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" charset="utf-8"></script>
   </body>
 </html>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#example').DataTable();
+  } );
+</script>
