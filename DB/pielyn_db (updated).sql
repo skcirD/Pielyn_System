@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2021 at 10:05 AM
+-- Generation Time: Aug 14, 2021 at 05:25 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -41,7 +41,9 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `first_name`, `last_name`, `username`, `password`) VALUES
 (1, 'Hendwrick', 'Gonzales', 'dricks', '89fc342c2313f7bf38068a9eff33f7a5'),
-(2, 'Cristian', 'Sarabia', 'ychan', 'bba17248d463149a9863e683c3c1a1df');
+(2, 'Cristian', 'Sarabia', 'ychan', 'bba17248d463149a9863e683c3c1a1df'),
+(3, 'Rachelyn', 'Macaraig', 'rj123', '57703b9f43d44d89c6a7e7e1d6c772aa'),
+(4, 'asd', 'asd', 'account', 'e268443e43d93dab7ebef303bbe9642f');
 
 -- --------------------------------------------------------
 
@@ -59,11 +61,34 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
-(1, 'Coca-Cola'),
-(2, 'Wilkins'),
-(4, 'Oishi'),
-(5, 'Absolute'),
-(19, 'New brand');
+(52, 'Redhorse'),
+(76, 'Bonakid'),
+(77, 'Absolute'),
+(78, 'Oishi'),
+(79, 'C2'),
+(80, 'San Miguel'),
+(81, 'Vitamilk');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cashier`
+--
+
+CREATE TABLE `cashier` (
+  `cashier_id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cashier`
+--
+
+INSERT INTO `cashier` (`cashier_id`, `first_name`, `last_name`, `username`, `password`) VALUES
+(1, 'hendwrick', 'Gonzales', 'dricks', '2bf14d7e06dcac964876accbed439b75');
 
 -- --------------------------------------------------------
 
@@ -84,9 +109,7 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 (2, 'Alcoholic'),
 (4, 'Beverages'),
 (5, 'Cigarette'),
-(6, 'Mineral Water'),
-(7, 'Beverages'),
-(12, 'Cigarette');
+(16, 'Drinks');
 
 -- --------------------------------------------------------
 
@@ -111,9 +134,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `pcode`, `barcode`, `description`, `brand`, `category`, `quantity`, `price`, `re_order`) VALUES
-(1, 'P0001', 1111111111, 'Coca-Cola 1-Liter', 'Coca-Cola', 'Softdrinks', 20, 28, 5),
-(2, 'P0002', 1111111112, 'Wilkins 1-Liter', 'Wilkins', 'Mineral Water', 30, 25, 10),
-(76, 'P0004', 11111113, '1 Liter Coke', 'Coca-Cola', 'Beverages', 30, 28, 10);
+(107, '01', 111, '12 oz Vitamilk', 'Vitamilk', 'Drinks', 60, 18, 20),
+(108, '02', 222, '1 Liter Redhorse', 'Redhorse', 'Alcoholic', 100, 89, 30);
 
 --
 -- Indexes for dumped tables
@@ -130,6 +152,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `brand`
   ADD PRIMARY KEY (`brand_id`);
+
+--
+-- Indexes for table `cashier`
+--
+ALTER TABLE `cashier`
+  ADD PRIMARY KEY (`cashier_id`);
 
 --
 -- Indexes for table `category`
@@ -151,25 +179,31 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+--
+-- AUTO_INCREMENT for table `cashier`
+--
+ALTER TABLE `cashier`
+  MODIFY `cashier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
