@@ -134,23 +134,65 @@ function displayProduct(){
   $p->getProducts();
 }
 
-// DISPLAY ALL CATEGORY IN Dropdownlist
+// DISPLAY ALL CATEGORY IN Dropdownlist and display selected value in update dropdownlist
 function display_categ_option(){
+  $categName = $_GET['cat'];
   $categ = new categBrand();
 
+  echo "<option value=''>Select a Category</option>";
   foreach ($categ->getCategory() as $data) {
-    echo "<option >$data[category_name]</option>";
+    echo "<option value='$data[category_name]'";
+          if($categName == $data['category_name'])
+          {
+            echo "selected";
+          }
+    echo ">$data[category_name]</option>";
   }
 }
 
-//Display all brand in Dropdownlist
+//Display all brand in Dropdownlist and display selected value in update dropdownlist
 function display_brand_option(){
+  $brandName = $_GET['br'];
   $categ = new categBrand();
   $result = $categ->getBrand();
+
+  echo "<option value=''>Select a Brand</option>";
   foreach ($result as $data) {
-    echo "<option >$data[brand_name]</option>";
+    echo "<option value='$data[brand_name]'";
+        if ($brandName == $data['brand_name']) {
+          echo "selected";
+        }
+    echo">$data[brand_name]</option>";
   }
 }
+
+function updateProduct(){
+  if (isset($_GET['btnUpdate'])) {
+    $id = $_GET['productId'];
+    $Pcode = $_GET['pcode'];
+    $Barcode = $_GET['barcode'];
+    $Description = $_GET['description'];
+    $Brand = $_GET['select-brand'];
+    $Category = $_GET['select-category'];
+    $Qty = $_GET['qty'];
+    $Price = $_GET['price'];
+    $Re_order = $_GET['reOrder'];
+
+    $product = new update_product($id, $Pcode, $Barcode, $Description, $Brand, $Category, $Qty, $Price, $Re_order);
+
+    $product->updateProduct();
+    if($product){
+      echo "<script>alert('Product has been successfully Updated')</script>";
+      pathTo('admin', 'product');
+
+    }else {
+      echo "<script>alert('Failed to update Product')</script>";
+      pathTo('admin', 'product');
+    }
+  }
+}
+
+
 
 // DELETE BRAND ON TABLE
 function delete_brand(){
@@ -182,7 +224,7 @@ function delete_product(){
 
     if($delete->deleteProduct()){
       // echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
-      echo '<script>alert("Deleted Successfuly")</script>';
+      // echo '<script>alert("Deleted Successfuly")</script>';
     }
   }
 }

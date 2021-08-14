@@ -81,31 +81,29 @@ security_session();
                 <input class="input-pcode" type="text" name="txt-pcode" required><br>
 
                 <label for="">Barcode</label>
-                <input class="input-barcode" type="text" name="txt-barcode"><br>
+                <input class="input-barcode" type="number" name="txt-barcode"><br>
 
                 <label for="">Description</label>
                 <input class="input-description" type="text" name="txt-description" required><br>
 
                 <label for="">Brand</label>
                 <select class="select-brand" name="select-brand"  required>
-                    <option value="">--Select Brand--</option>
                     <?php display_brand_option(); ?>
                 </select>
 
                 <label for="">Category</label>
                 <select class="select-category" name="select-category"  required>
-                    <option value="">--Select Category--</option>
                     <?php display_categ_option(); ?>
                 </select>
 
                 <label for="">Quantity</label>
-                <input class="input-qty" type="text" name="txt-qty"  required><br>
+                <input class="input-qty" type="number" name="txt-qty"  required><br>
 
                 <label for="">Price</label>
-                <input class="input-price" type="text" name="txt-price"  required><br>
+                <input class="input-price" type="number" name="txt-price"  required><br>
 
                 <label for="">Re-Order Level</label>
-                <input class="input-reOrder" type="text" name="txt-reOrder"  required><br>
+                <input class="input-reOrder" type="number" name="txt-reOrder"  required><br>
 
                 <button class="btn-addProduct" type="submit" name="btn-addProduct">Add</button>
           </div>

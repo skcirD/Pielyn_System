@@ -1,15 +1,83 @@
 
 
 
+input{
+  margin-bottom: 10px;
+  width: 70%;
+  padding: 5px;
+  font-size: 12px;
+  border: solid 1px  #008c96a4;
+  font-weight: bold;
+}
+
+select{
+  margin-bottom: 10px;
+  border: solid 1px  #008c96a4;
+  padding: 5px;
+  width: 35%;
+  font-weight: bold;
+}
+
+label{
+  color: #008D96;
+  font-weight: bold;
+}
+
 /* FORM UPDATE PRODUCTS */
 .updateProduct_formContainer{
   background-color: white;
+  box-shadow: 2px -1px 1px 1px rgb(194, 192, 192);
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.main-content .updateProduct_formContainer h1{
+  color: #008D96;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+/* INPUT position*/
+.inputPcode{
+  margin-left: 57px;
+}
+.inputBarcode{
+  margin-left: 45px;
+}
+.inputDescription{
+  margin-left: 25px;
+}
+.selectBrand{
+  margin-left: 63px;
+}
+.selectCategory{
+  margin-left: 40px;
+}
+.inputQty{
+  margin-left: 45px;
+}
+.inputPrice{
+  margin-left: 68px;
+}
+
+/* BUTTON UPDATE */
+.btnUpdate{
+  margin-top: 30px;
+  margin-left: 295px;
+  width: 100px;
+  background-color: #008D96;
+  border: none;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
