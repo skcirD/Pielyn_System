@@ -51,7 +51,7 @@ security_session();
             <input class="btn-addbrand" id="btn-brand" type="button" name="btn-addbrand" value="Add Brand">
           <div class="brand-container">
             <h1 class="text-brand">Manage Brands</h1>
-            <table class="display" id="example" style="width:100%">
+            <table class="brand-table display" id="example">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -66,48 +66,20 @@ security_session();
           </div>
       </div>
 
-      <!-- <div class="addBrand-modal">
+      <div class="addBrand-modal">
         <form class="add-brand" action="" method="GET">
           <hr class="top-hr">
           <div class="addBrand-container">
                 <h4>Add Brand <span class="modal-closebtn">&times;</span></h4>
                 <label for="">Brand Name</label>
-                <input class="input-brand" type="text" name="txt-brand" placeholder="Enter brand name">
-                <input class="btn-addBrand" id="addBrand" type="submit" name="btn-addBrand" value="Add"> -->
-                <!-- <input class="btn-updateBrand" id="btn-updateBrand" type="submit" name="btn-updateBrand" value="Update"> -->
-          <!-- </div>
-          <hr class="bottom-hr">
-        </form>
-      </div> -->
+                <input class="input-brand" type="text" name="txt-brand" placeholder="Enter brand name" required>
+                <input class="btn-addBrand" id="addBrand" type="submit" name="btn-addBrand" value="Add">
 
-      <!-- UPDATE MODAL -->
-      <!-- <div class="updateBrand-modal">
-        <form class="update-brand" action="" method="GET">
-          <hr class="top-hr">
-          <div class="updateBrand-container">
-                <h4>Update Brand <span class="modal-closebtn">&times;</span></h4>
-                <label for="">Brand Name</label>
-                <input class="updateInput-brand" type="text" name="txt-brand" placeholder="Edit brand name">
-                <input class="btn-updateBrand" id="updateBrand" type="submit" name="btn-updateBrand" value="Update"> -->
-                <!-- <input class="btn-updateBrand" id="updateBrand" type="submit" name="btn-updateBrand" value="Update"> -->
-          <!-- </div>
-          <hr class="bottom-hr">
-        </form>
-      </div> -->
-
-      <!-- <div class="updateBrand-modal">
-        <form class="update-brand" action="" method="GET">
-          <hr class="top-hr">
-          <div class="updateBrand-container">
-                <h4>Update Brand <span class="modal-closebtn">&times;</span></h4>
-                <label for="">Update Name</label>
-                <input class="input-brand" type="text" name="txt-brand" placeholder="Enter brand name">
-                <input class="btn-addBrand" id="btn-addBrand" type="submit" name="btn-addBrand" value="Add">
-                <input class="btn-updateBrand" id="btn-updateBrand" type="submit" name="btn-updateBrand" value="Update">
           </div>
           <hr class="bottom-hr">
         </form>
-      </div> -->
+      </div>
+
 
       <script src="../javascript/brand.js" charset="utf-8"></script>
       <!-- for DATATABLE -->

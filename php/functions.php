@@ -33,18 +33,9 @@ function add_Brand(){
     $brand = new add($brandName);
 
     if($brand->addBrand()){
-      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add Successfully <span class="closebtn">&times;</span></div>';
-    }else{
-      echo "Failed to add new brand";
+      echo "<script>alert('Brand successfully Added ')</script>";
     }
   }
-  // else if(isset($_GET['btn-updateBrand']) && empty($_GET['txt-brand'])){
-  //   echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Enter a brand name to add <span class="closebtn">&times;</span></div>';
-  // }
-  // else if(isset($_GET['btn-updateBrand']) && !empty($_GET['txt-brand'])){
-  //   $b = $_GET['txt-brand'];
-  //   echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add Successfully <span class="closebtn">&times;</span></div>';
-  // }
 }
 
 // UPDATE BRAND
@@ -86,12 +77,8 @@ function add_Product(){
       $product = new addProduct($pcode, $barcode, $description, $brand, $category, $qty, $price, $reOrder);
 
       if($product->addProduct()){
-        // echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add  Product Successfully <span class="closebtn">&times;</span></div>';
         echo '<script>alert("Successfuly added Product.")</script>';
       }
-    }else{
-        echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Incomplete product information <span class="closebtn">&times;</span></div>';
-        // echo '<script>alert("Failed to add Product.")</script>';
     }
   }
 }
@@ -192,6 +179,25 @@ function updateProduct(){
   }
 }
 
+function updateBrand(){
+  if (isset($_GET['btnUpdate'])) {
+    $id = $_GET['brandId'];
+    $newbrand = $_GET['brand'];
+
+    $brand = new update_brand_categ($id, $newbrand);
+
+    $brand->updateBrand();
+    if($brand){
+      echo "<script>alert('Brand has been successfully Updated')</script>";
+      pathTo('admin', 'brand');
+
+    }else {
+      echo "<script>alert('Failed to update Brand')</script>";
+      pathTo('admin', 'brand');
+    }
+  }
+}
+
 
 
 // DELETE BRAND ON TABLE
@@ -199,9 +205,7 @@ function delete_brand(){
   if(!empty($_GET['delete'])){
     $d = new delete($_GET['delete']);
     if($d->deleteBrand()){
-      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
-    }else{
-      echo "Brand Delete Error!";
+      
     }
   }
 }
@@ -211,9 +215,7 @@ function delete_category(){
   if(!empty($_GET['delete'])){
     $d = new delete($_GET['delete']);
     if($d->deleteCategory()){
-      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
-    }else{
-      echo "Category Delete Error!";
+
     }
   }
 }

@@ -16,6 +16,8 @@ security_session();
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <!-- for DATATABLE -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   </head>
   <body>
       <div class="nav-bar">
@@ -50,7 +52,7 @@ security_session();
             <input class="btn-addcategory" id="btn-category" type="button" name="btn-addcategory" value="Add category">
           <div class="category-container">
             <h1 class="text-category">Category</h1>
-            <table class="category-table">
+            <table class="category-table display" id="example">
                 <thead>
                     <th>#</th>
                     <th>Category Name</th>
@@ -74,7 +76,16 @@ security_session();
         </form>
       </div>
 
-      <script src="../javascript/category.js" charset="utf-8"></script>
-      <script src="../javascript/jFunctions.js" charset="utf-8"></script>
+      <!-- <script src="../javascript/category.js" charset="utf-8"></script>
+      <script src="../javascript/jFunctions.js" charset="utf-8"></script> -->
+      <!-- for DATATABLE -->
+      <script src="https://code.jquery.com/jquery-3.5.1.js" charset="utf-8"></script>
+      <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" charset="utf-8"></script>
   </body>
 </html>
+<!-- JAVASCCRIPT -->
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#example').DataTable();
+  } );
+</script>

@@ -27,7 +27,7 @@
                   <td>
                       <a class='update' href='update_product.php?update=$data[product_id]&pc=$data[pcode]&bc=$data[barcode]&dc=$data[description]&
                                           br=$data[brand]&cat=$data[category]&qty=$data[quantity]&price=$data[price]&rd=$data[re_order]'>update</a>";
-        echo "<a class='delete' onClick='deleteMe($data[product_id])' name='Delete' >delete</a>";
+        echo         "<a class='delete' onClick='deleteMe($data[product_id])' name='Delete' >delete</a>";
         echo     "</td>
               </tr>";
               $i ++;
