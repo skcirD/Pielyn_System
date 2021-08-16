@@ -74,10 +74,9 @@
 }
 
 .btn-addcategory{
-  margin-top: 50px;
   position: absolute;
-  left: 0;
-  top: 30px;
+  left: 180px;
+  top: 47px;
   background-color: #008D96;
   color: white;
   border: none;
@@ -87,13 +86,18 @@
   border-radius: 2px;
 }
 
+.btn-addcategory:hover{
+  background-color: #008c96a4;
+}
+
 .category-container{
   width: 100%;
-  margin-top: 100px;
+  margin-top: 10px;
   box-shadow: 1px -1px 1px 1px rgb(194, 192, 192);
   border-radius: 3px;
   background-color: white;
-  font-size: 15px;
+  font-size: 12px;
+  padding: 10px;
 }
 
 /* label */
@@ -107,10 +111,10 @@
   width: 100%;
   border-collapse: collapse;
   font-weight: 900;
+  padding-top: 10px;
 }
 
 .category-table td, .category-table th{
-    padding: 12px 15px;
     border: 1px solid #ddd;
 }
 .category-table th{
@@ -125,12 +129,7 @@
 
 .category-container .category-table .op{
   text-align: center;
-  width: 150px;
-}
-
-.U-D{
-  text-align: center;
-  padding-left: 30px;
+  width: 90px;
 }
 
 .update{
@@ -139,6 +138,8 @@
   border-radius: 2px;
   color: white;
   font-weight: bolder;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 .delete{
@@ -225,6 +226,7 @@
   width: 100%;
   padding: 5px;
   font-size: 12px;
+  font-weight: bolder;
   border: solid 1px  #008c96a4;
 }
 

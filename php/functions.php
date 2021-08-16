@@ -51,9 +51,7 @@ function add_Category(){
     $category = new add($category);
 
     if($category->addCategory()){
-      echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Add Successfully <span class="closebtn">&times;</span></div>';
-    }else{
-      echo "Failed to add new category";
+      echo "<script>alert('Category successfully Added')</script>";
     }
   }
 }
@@ -198,15 +196,30 @@ function updateBrand(){
   }
 }
 
+function updateCategory(){
+  if (isset($_GET['btnUpdate'])) {
+    $id = $_GET['categoryId'];
+    $newCategory = $_GET['category'];
 
+    $category = new update_brand_categ($id, $newCategory);
+
+    $category->updateCategory();
+    if($category){
+      echo "<script>alert('Category has been successfully Updated')</script>";
+      pathTo('admin', 'category');
+
+    }else {
+      echo "<script>alert('Failed to update Category')</script>";
+      pathTo('admin', 'category');
+    }
+  }
+}
 
 // DELETE BRAND ON TABLE
 function delete_brand(){
   if(!empty($_GET['delete'])){
     $d = new delete($_GET['delete']);
-    if($d->deleteBrand()){
-      
-    }
+    $d->deleteBrand();
   }
 }
 
@@ -214,20 +227,14 @@ function delete_brand(){
 function delete_category(){
   if(!empty($_GET['delete'])){
     $d = new delete($_GET['delete']);
-    if($d->deleteCategory()){
-
-    }
+    $d->deleteCategory();
   }
 }
 // DELETE PRODUCT
 function delete_product(){
   if(!empty($_GET['delete'])){
     $delete = new delete($_GET['delete']);
-
-    if($delete->deleteProduct()){
-      // echo '<div class="txt-addSuccess" ><i class="fas fa-check-circle"></i>Successfully removed<span class="closebtn">&times;</span></div>';
-      // echo '<script>alert("Deleted Successfuly")</script>';
-    }
+    $delete->deleteProduct();
   }
 }
 

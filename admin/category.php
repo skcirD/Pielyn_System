@@ -51,7 +51,7 @@ security_session();
              ?>
             <input class="btn-addcategory" id="btn-category" type="button" name="btn-addcategory" value="Add category">
           <div class="category-container">
-            <h1 class="text-category">Category</h1>
+            <h1 class="text-category">Manage Category</h1>
             <table class="category-table display" id="example">
                 <thead>
                     <th>#</th>
@@ -69,15 +69,14 @@ security_session();
           <div class="addCategory-container">
                 <h4>Add Category <span class="modal-closebtn">&times;</span></h4>
                 <label for="">Category Name</label>
-                <input type="text" name="txt-category" placeholder="Enter category name">
+                <input class="input-category" type="text" name="txt-category" placeholder="Enter category name" required>
                 <input class="btn-addCategory" type="submit" name="btn-addCategory" value="Add">
           </div>
           <hr class="bottom-hr">
         </form>
       </div>
 
-      <!-- <script src="../javascript/category.js" charset="utf-8"></script>
-      <script src="../javascript/jFunctions.js" charset="utf-8"></script> -->
+      <script src="../javascript/category.js" charset="utf-8"></script>
       <!-- for DATATABLE -->
       <script src="https://code.jquery.com/jquery-3.5.1.js" charset="utf-8"></script>
       <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" charset="utf-8"></script>
