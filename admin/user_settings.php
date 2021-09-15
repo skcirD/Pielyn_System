@@ -44,8 +44,8 @@ security_session();
 
           <div class="account-con">
                 <div class="head-con">
-                    <h3><a href="#">CREATE ACCOUNT  </a></h3>
-                    <h3><a href="#">CHANGE PASSWORD  </a></h3>
+                    <h3><a href="#">CREATE ACCOUNT/  </a></h3>
+                    <h3><a href="#">CHANGE PASSWORD/    </a></h3>
                     <h3><a href="#">ACTIVATE/DEACTIVATE ACCOUNT</a></h3>
                     <hr>
                 </div>

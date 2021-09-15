@@ -44,25 +44,53 @@ security_session();
       <div class="main-content">
           <div class="container">
               <div class="sales-con">
-                  <h1>1200</h1>
-                  <h5>DAILY SALES</h5>
-                  <p>Total daily sales recorded in the database</p>
+                  <div class="dailySales-icon">
+                    <img calss="peso-icon" src="images/philippine-peso.png" alt="img" style="width:35px; margin-bottom:10px;">
+                    <img src="images/vertical-line.png" alt="img" style="width: 10px; height: 50px;">
+                  </div>
+                  <div class="dailySales-info">
+                    <h1 style="">1200</h1>
+                    <h5>DAILY SALES</h5>
+                    <!-- <p>Total daily sales recorded in the database</p> -->
+                  </div>
               </div>
               <div class="product-con">
-                  <h1>1200</h1>
-                  <h5>PRODUCT LINE</h5>
-                  <p>Total product line recorded in the database</p>
+                  <div class="dailySales-icon">
+                    <img src="images/supplies.png" alt="img" style="width:35px; margin-bottom:10px;">
+                    <img src="images/vertical-line.png" alt="img" style="width: 10px; height: 50px;">
+                  </div>
+                  <div class="dailySales-info">
+                    <h1>1200</h1>
+                    <h5>PRODUCT LINE</h5>
+                    <!-- <p>Total product line recorded in the database</p> -->
+                  </div>
               </div>
               <div class="stockOnHand-con">
+                <div class="dailySales-icon">
+                  <img src="images/stock-on-hand.png" alt="img" style="width:35px; margin-bottom:10px;">
+                  <img src="images/vertical-line.png" alt="img" style="width: 10px; height: 50px;">
+                </div>
+                <div class="dailySales-info">
                   <h1>0</h1>
                   <h5>STOCK ON HAND</h5>
-                  <p>Total stock on hand in the database</p>
+                  <!-- <p>Total stock on hand in the database</p> -->
+                </div>
+
               </div>
               <div class="criticalItem-con">
+                <div class="dailySales-icon">
+                  <img src="images/critical-items.png" alt="img" style="width:35px; margin-bottom:10px;">
+                  <img src="images/vertical-line.png" alt="img" style="width: 10px; height: 50px;">
+                </div>
+                <div class="dailySales-info">
                   <h1>0</h1>
                   <h5>CRITICAL ITEMS</h5>
-                  <p>Total critical Items</p>
+                  <!-- <p>Total critical Items</p> -->
+                </div>
+
+
               </div>
+              <br>
           </div>
 
       </div>

@@ -1,6 +1,8 @@
-h1{
+.main-content .container h1{
   text-align: center;
+  font-family: sans-serif;
 }
+
 .main-content{
     width: 82.5%;
     height: 530px;
@@ -15,8 +17,8 @@ h1{
 .container{
   margin-left: 100px;
   padding-top: 30px;
+  color: white;
 }
-
 
 /* SALES CONTAINER */
 .sales-con{
@@ -26,6 +28,17 @@ h1{
   display: inline-block;
   text-align: left;
   border-radius: 3px;
+  padding-top: 20px;
+}
+
+.dailySales-icon{
+  display: inline;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.dailySales-info{
+  display: inline-block;
 }
 
 /* PRODUCT LINE CONTAINER */
@@ -38,6 +51,7 @@ h1{
   border-radius: 3px;
   margin-left: 10px;
   margin-right: 10px;
+  padding-top: 20px;
 }
 
 
@@ -49,6 +63,7 @@ h1{
   text-align: left;
   border-radius: 3px;
   margin-right: 10px;
+  padding-top: 20px;
 }
 
 
@@ -59,6 +74,6 @@ h1{
   display: inline-block;
   text-align: left;
   position: relative;
-  top: -20px;
   border-radius: 3px;
+  padding-top: 20px;
 }

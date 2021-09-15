@@ -16,8 +16,10 @@ function login(){
   if (isset($_POST['submit'])) {
     $password = md5($_POST['password']);
     $username = $_POST['username'];
+    $role = $_POST['userRole'];
 
-    $login = new login($username, $password);
+
+    $login = new login($username, $password, $role);
     $login->addminLogin();
   }
 }
@@ -245,6 +247,7 @@ function logout(){
   $_SESSION['status'] = 'invalid';
   unset($_SESSION['firstname']);
   unset($_SESSION['lastname']);
+  unset($_SESSION['role']);
 
   pathTo('admin', 'login');
 }
@@ -259,7 +262,7 @@ function security_session(){
   if(!isset($_SESSION)){
     session_start();
   }
-  if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+  if($_SESSION['status'] == 'invalid' || empty($_SESSION['status']) || $_SESSION['role'] != "Admin"){
     $_SESSION['status'] = 'invalid';
     unset($_SESSION['firstname']);
     unset($_SESSION['lastname']);
@@ -276,15 +279,30 @@ function security_session(){
 
 ###########################################################CASHIER FUNCTIONS#####################################################
 
-function cashier_Login(){
-  if(isset($_POST['btn-login'])){
-    $username = $_POST['userName'];
-    $password = md5($_POST['password']);
+function searchProduct(){
+  if(isset($_POST['txt-searchBar'])){
+     $searchq = $_POST['txt-searchBar'];
+     $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
 
-    $cashier = new login($username, $password);
-    $cashier->cashierLogin();
-  }
+     $search = new pos_search_product($searchq);
+
+     if($search->searchP()){
+       foreach ($search->searchP() as $data) {
+         echo "<tr>";
+         echo     "<td>$data[barcode]</td>
+                   <td>$data[description]</td>
+                   <td>$data[price]</td>
+                   <td>$data[quantity]</td>";
+         echo "</tr>";
+       }
+     }else{
+       echo "<script>
+         document.querySelector('.txt-search').style.innerHTML = 'Not Found'
+       </script>";
+     }
+   }
 }
+
 
 
 ?>

@@ -3,10 +3,12 @@
   class login extends config{
     public $username;
     public $password;
+    public $role;
 
-    public function __construct($username, $password){
+    public function __construct($username, $password, $role){
       $this->username = $username;
       $this->password = $password;
+      $this->role = $role;
     }
 
     public function addminLogin(){
@@ -16,17 +18,24 @@
       // $data->execute([$username, $password,]);
       // $user = $data->fetch();
       // $total = $data->rowCount();
-      $stmt = $con->prepare("SELECT * FROM admin WHERE username = ? AND password = ?");
-      $stmt->execute([$this->username, $this->password,]);
+      $stmt = $con->prepare("SELECT * FROM admin WHERE username = ? AND password = ? AND users_role = ?");
+      $stmt->execute([$this->username, $this->password, $this->role]);
       $user = $stmt->fetch();
       $total = $stmt->rowCount();
 
-      if ($total >0) {
-        session_start();
+      if ($total >0 ) {
         $_SESSION['status'] = 'valid';
         $_SESSION['firstname'] = $user['first_name'];
         $_SESSION['lastname'] = $user['last_name'];
-        header("Location: index.php");
+        $_SESSION['role'] = $user['users_role'];
+        if($_SESSION['role'] == "Admin"){
+          header("Location: index.php");
+        }
+        else if($_SESSION['role'] == "Cashier"){
+          echo "<script>window.location.href = '/Inventory_POS_Pielyn/cashier/pos.php'</script>";
+        }
+
+
       }else{
         $_SESSION['status'] = 'invalid';
               echo '<div class="alert">
@@ -34,6 +43,7 @@
                 <strong>Failed!</strong> Check your Username and Password.
               </div>';
       }
+
     }
 
     public function cashierLogin(){

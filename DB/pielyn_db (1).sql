@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2021 at 05:25 PM
+-- Generation Time: Aug 24, 2021 at 05:32 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -32,18 +32,19 @@ CREATE TABLE `admin` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `users_role` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `first_name`, `last_name`, `username`, `password`) VALUES
-(1, 'Hendwrick', 'Gonzales', 'dricks', '89fc342c2313f7bf38068a9eff33f7a5'),
-(2, 'Cristian', 'Sarabia', 'ychan', 'bba17248d463149a9863e683c3c1a1df'),
-(3, 'Rachelyn', 'Macaraig', 'rj123', '57703b9f43d44d89c6a7e7e1d6c772aa'),
-(4, 'asd', 'asd', 'account', 'e268443e43d93dab7ebef303bbe9642f');
+INSERT INTO `admin` (`id`, `first_name`, `last_name`, `username`, `password`, `users_role`) VALUES
+(1, 'Hendwrick', 'Gonzales', 'dricks', '89fc342c2313f7bf38068a9eff33f7a5', 'Admin'),
+(2, 'Cristian', 'Sarabia', 'ychan', 'bba17248d463149a9863e683c3c1a1df', 'Cashier'),
+(3, 'Rachelyn', 'Macaraig', 'rj123', '57703b9f43d44d89c6a7e7e1d6c772aa', 'cashier'),
+(4, 'asd', 'asd', 'account', 'e268443e43d93dab7ebef303bbe9642f', 'cashier');
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,11 @@ INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
 (78, 'Oishi'),
 (79, 'C2'),
 (80, 'San Miguel'),
-(81, 'Vitamilk');
+(82, 'Redhorse'),
+(83, 'Yakult'),
+(89, 'nes-cafe'),
+(91, 'Malboro'),
+(92, 'Jack n Jill');
 
 -- --------------------------------------------------------
 
@@ -88,7 +93,7 @@ CREATE TABLE `cashier` (
 --
 
 INSERT INTO `cashier` (`cashier_id`, `first_name`, `last_name`, `username`, `password`) VALUES
-(1, 'hendwrick', 'Gonzales', 'dricks', '2bf14d7e06dcac964876accbed439b75');
+(1, 'hendwrick', 'Gonzales', 'dricks', 'aea6789ed57d02c1b5a2dd2f35c3eb63');
 
 -- --------------------------------------------------------
 
@@ -109,7 +114,11 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 (2, 'Alcoholic'),
 (4, 'Beverages'),
 (5, 'Cigarette'),
-(16, 'Drinks');
+(17, 'bread'),
+(20, 'Non-Food'),
+(21, 'Drinks'),
+(22, 'Chips'),
+(23, 'Candy');
 
 -- --------------------------------------------------------
 
@@ -134,8 +143,18 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `pcode`, `barcode`, `description`, `brand`, `category`, `quantity`, `price`, `re_order`) VALUES
-(107, '01', 111, '12 oz Vitamilk', 'Vitamilk', 'Drinks', 60, 18, 20),
-(108, '02', 222, '1 Liter Redhorse', 'Redhorse', 'Alcoholic', 100, 89, 30);
+(108, '02', 222, '1 Liter Redhorse', 'Redhorse', 'Alcoholic', 100, 89, 30),
+(114, '01', 111, '6 Pack Yakult', 'Yakult', 'Drinks', 100, 35, 20),
+(115, '03', 333, '6 oz C-2', 'C2', 'Drinks', 300, 18, 30),
+(116, '04', 444, '1 Pack Malboro', 'Malboro', 'Cigarette', 20, 100, 5),
+(117, '05', 555, 'Small Piatos', 'Oishi', 'Chips', 50, 15, 10),
+(118, '06', 666, '1 Pack Nes-cafe', 'nes-cafe', 'Drinks', 100, 8, 20),
+(119, '07', 777, 'Small Nova', 'Oishi', 'Chips', 100, 15, 20),
+(120, '08', 888, '12 oz Absolute', 'Absolute', 'Drinks', 100, 10, 20),
+(121, '09', 999, '12 oz San-Mig', 'San Miguel', 'Alcoholic', 50, 32, 25),
+(122, '10', 1010, '1 Rim Winston Red', 'Malboro', 'Cigarette', 10, 100, 5),
+(123, '11', 21321, '1 Pack Max candy', 'Jack n Jill', 'Candy', 10, 45, 5),
+(124, '11', 32122, 'Large Piattos Cheese', 'Oishi', 'Chips', 50, 28, 10);
 
 --
 -- Indexes for dumped tables
@@ -185,7 +204,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `cashier`
@@ -197,13 +216,13 @@ ALTER TABLE `cashier`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

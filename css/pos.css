@@ -4,6 +4,8 @@
 
 body{
   margin: 0;
+  background: #008D96;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -11,9 +13,79 @@ body{
 /* -----HEADER CONTAINER-----*/
 
 .header-con{
-  border: solid 1px black;
   height: 100px;
-  background-color: orange;
+  display: flex;
+  padding: 5px;
+}
+
+.logo-container{
+  background: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 100px;
+  color: #008D96;
+  font-weight: bold;
+  margin-left: 5px;
+  border: solid 1px black;
+  position: relative;
+}
+
+.top-logo{
+  height: 50px;
+  width: 50px;
+  margin-left: 15px;
+  margin-top: 10px;
+  border: solid 1px #008D96;
+  border-radius: 100%;
+}
+.logo-text{
+  display: inline-block;
+  position: absolute;
+  left: 95px;
+}
+
+.logo-text-container{
+  margin-top: 10px;
+}
+
+.bottomPannel-orange{
+  width: 100%;
+  height: 18px;
+  position: absolute;
+  bottom: 0;
+  background: #FF990A;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.info-container{
+  width: 300px;
+  height: 100px;
+  margin-left: 30px;
+}
+
+.main-container .info-container h6{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 100px;
+  font-size: 15px;
+
+}
+
+.main-container .info-container p{
+  margin-left: 10px;
+  color: black;
+  font-size: 15px;
+}
+
+.total-container{
+  background: black;
+  color: #45F500;
+  width: 450px;
+  height: 100px;
+  position: absolute;
+  right: 10px;
 }
 
 
@@ -21,20 +93,154 @@ body{
 /* -----BODY CONTAINER-----*/
 
 .body-con{
-  border: solid 1px red;
-  background-color: yellow;
   height: 400px;
+  display: flex;
 }
 
- th{
-  border: solid 1px red;
+.pos-table-container{
+  margin-top: 10px;
+  width: 800px;
+  height: 95%;
+  background-color: white;
+  margin-left: 10px;
+  border: solid 1px black;
+}
+
+.pos-table{
+  width: 800px;
+  border-collapse: collapse;
+  font-weight: 900;
+  padding-top: 10px;
+}
+
+.pos-table2-container{
+  margin-top: 10px;
+  height: 335px;
+  background-color: white;
+  border: solid 1px black;
+}
+
+.pos-table2{
+  width: 450px;
+  border-collapse: collapse;
+  font-weight: 900;
+  padding-top: 10px;
+}
+
+.pos-table td, .pos-table th{
+    background: white;
+    text-align: left;
+    padding: 5px;
+}
+
+.pos-table2 td, .pos-table2 th{
+    padding: 5px;
+}
+
+.pos-table th, .pos-table2 th{
+    background-color: #FF990A;
+    color: black;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight:  300px;
+    padding: 5px;
 }
 
 
+.search-container{
+  /* background: white; */
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.body-con .search-container .search-form .txt-search{
+  width: 450px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0;
+  cursor:  auto;
+}
 
 /* -----FOOTER CONTAINER-----*/
 .footer-con{
-  border: solid 1px green;
-  background-color: blue;
-  height: 110px;
+  height: 95px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.cancel-finish-container{
+  display: flex;
+  position: relative;
+}
+
+.label-totalAmount-con h3{
+  display: inline;
+}
+
+.btn-finish{
+  width: 453px;
+  height: 50px;
+  border-radius: 3px;
+  border: solid 1px black;
+  color: #008D96;
+  font-size: 25px;
+}
+
+.label-totalAmount-con{
+  position: absolute;
+  top: 10px;
+  left: 600px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+.btn-cancel{
+  width: 453px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  border-radius: 3px;
+  border: solid 1px black;
+  color: #008D96;
+  font-size: 25px;
+}
+
+.button-con{
+  margin-top: 5px;
+  display: inline-flex;
+}
+
+.footer-con .button-con input{
+  height: 45px;
+  border-radius: 5px;
+  border: solid 1px black;
+  margin-right: 5px;
+  color: #008D96;
+}
+
+.btn-logout{
+  width: 100px;
+  height: 33px;
+  background: #EFEFEF;
+  border-radius: 5px;
+  text-decoration: none;
+  display: block;
+  color: #008D96;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 10px;
+  border: solid 1px black;
+  margin-left: 255px;
+}
+
+.btn-logout:hover{
+  background: white;
+}
+
+input:hover{
+  cursor: pointer;
+  background: white;
 }
