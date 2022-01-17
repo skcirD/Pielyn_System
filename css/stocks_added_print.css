@@ -1,0 +1,27 @@
+.main-content{
+  display: block;
+}
+
+
+
+
+table { border-collapse:collapse;   }
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
+
+
+table{
+  width: 100%;
+  background: #FFFFFF;
+}
+
+table th{
+  padding: 10px;
+  position: relative;
+}
+table td{
+  text-align: center;
+}

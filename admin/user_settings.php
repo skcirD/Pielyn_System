@@ -15,67 +15,112 @@ security_session();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   </head>
-  <body>
-      <div class="nav-bar">
-        <div class="logo">
-          <img class="top-logo" src="images/circle-Logo1.png" alt="img">
-          <h1 class="pielyn-store">Inventory System | Pielyn Store</h1>
-        </div>
-
-        <h4 class="user">Administrator</h4>
-
-      </div>
-      <div class="wrapper">
-        <div class="side-bar">
-            <ul>
-              <li><a href="index.php"><i class="fas fa-home"></i></i>Dashboard</a></li>
-              <li><a href="product.php"><i class="fas fa-shopping-cart"></i>Product</a></li>
-              <li><a href="brand.php"><i class="fas fa-folder-open"></i>Brand</a></li>
-              <li><a href="category.php"><i class="fas fa-folder"></i>Category</a></li>
-              <li><a href="stock_entry.php"><i class="fas fa-clipboard-list"></i>Stock Entry</a></li>
-              <li><a href="stock_adjustment.php"><i class="fas fa-chart-pie"></i>Stock Adjustment</a></li>
-              <li><a href="reports.php"><i class="fas fa-database"></i></i>Reports</a></li>
-              <li><a href="user_settings.php"><i class="fas fa-cog"></i></i>User Settings</a></li>
-            </ul>
-        </div>
-      </div>
+  <body style="background: #DCDCDC;">
+      <?php include '../php/navigation.php'; ?>
       <div class="main-content">
-          <h1>USER ACCOUNT</h1>
+
 
           <div class="account-con">
-                <div class="head-con">
-                    <h3><a href="#">CREATE ACCOUNT/  </a></h3>
-                    <h3><a href="#">CHANGE PASSWORD/    </a></h3>
-                    <h3><a href="#">ACTIVATE/DEACTIVATE ACCOUNT</a></h3>
-                    <hr>
+            <div class="title">
+                <h1>Account Setting</h1>
+            </div>
+                <div class="table-con">
+                    <table id="main-tbl">
+                        <thead>
+                              <th>#</th>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>User Type</th>
+                              <th>Username</th>
+                              <th>Password</th>
+                              <th></th>
+                        </thead>
+                        <tbody id="tbl">
+                            <?php displayUsers(); add_user(); deleteUser();?>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="form-con">
-                    <form class="" action="" method="post">
-                      <?php add_user(); ?>
-                          <div class="username">
-                              <label for="">Username</label>
-                              <input type="text" name="userName">
-                          </div>
-                          <div class="password">
-                              <label for="">Password</label>
-                              <input type="password" name="password">
-                          </div>
-                          <div class="firstName">
-                              <label for="">First Name</label>
-                              <input type="text" name="firstName">
-                          </div>
-                          <div class="lastName">
-                              <label for="">Last Name</label>
-                              <input type="text" name="lastName">
-                          </div>
-                          <div class="btn-form">
-                              <button type="submit" name="btn-create">Create</button>
-                          </div>
-                    </form>
+                <div class="button-con">
+
                 </div>
           </div>
 
-      </div>
+          <div class="add-update-con">
+            <div class="form-con">
+                <form class="" action="" method="post">
+                      <div id="txt"class="firstName">
+                          <label for="">First Name</label><br>
+                          <input type="text" name="firstName" required>
+                      </div>
+                      <div id="txt"class="lastName">
+                          <label for="">Last Name</label><br>
+                          <input type="text" name="lastName" required>
+                      </div>
+                      <div id="txt"class="username">
+                          <label for="">Username</label><br>
+                          <input type="text" name="userName" required>
+                      </div>
+                      <div id="txt"class="password">
+                          <label for="">Password</label><br>
+                          <input type="password" name="password" required>
+                      </div>
+                      <div id="txt"class="userType">
+                          <label for="">User Type </label><br>
+                          <select class="" name="usersRole" required>
+                              <option value="Manager">Manager</option>
+                              <option value="Stockman">Stockman</option>
+                              <option value="Cashier">Cashier</option>
+                          </select>
+                      </div>
+                      <div class="btn-form">
+                          <button id ="bttn" type="submit" name="btn-create">Create</button>
+                          <?php ?>
+                      </div>
+                </form>
+            </div>
+            <div class="btn">
+                <a id="btnback" href="index.php">Back</a>
+            </div>
 
+          </div>
+      </div>
+      <!-- MODAL UPDATE USER -->
+      <div class="modal-con">
+          <div class="update-con">
+              <form class="update-form" action="index.html" method="post">
+                <label id="id" name="lbliD"><?php getuserInfo(); ?></label>
+                <div id="m-txt"class="firstName">
+                    <label for="">First Name</label><br>
+                    <input type="text" name="mfirstName" required>
+                </div>
+                <div id="m-txt"class="lastName">
+                    <label for="">Last Name</label><br>
+                    <input type="text" name="mlastName" required>
+                </div>
+                <div id="m-txt"class="username">
+                    <label for="">Username</label><br>
+                    <input type="text" name="muserName" required>
+                </div>
+                <div id="m-txt"class="password">
+                    <label for="">Password</label><br>
+                    <input type="password" name="mpassword" required>
+                </div>
+                <div id="m-txt"class="userType">
+                    <label for="">User Type </label><br>
+                    <select class="" name="musersRole" required>
+                        <option value="Admin">Admin</option>
+                        <option value="Stockman">Stockman</option>
+                        <option value="Cashier">Cashier</option>
+                    </select>
+                </div>
+                <div class="mbtn-form">
+                    <button type="submit" name="mbtn-update">Update</button>
+                    <button id="back"  type="button" name="mbtn-create">back</button>
+                    <?php ?>
+                </div>
+              </form>
+          </div>
+      </div>
+      <script src="../javascript/user_settings.js" charset="utf-8"></script>
   </body>
 </html>

@@ -1,0 +1,84 @@
+.main-content{
+  display: flex;
+  color: #008D96;
+}
+.date-top{
+  position: absolute;
+  top: 135px;
+  left: 55px;
+  font-weight: bolder;
+}
+
+.date-top #btnLoad{
+  width: 100px;
+  height: 30px;
+  color: white;
+  padding: 5px;
+  background: #008D96;
+  border: 0;
+  font-size: 10px;
+}
+
+.con-1{
+  width: 400px;
+  height: 150px;
+  margin-left: 150px;
+  margin-top: 100px;
+}
+.con-2{
+  width: 400px;
+  height: 150px;
+    margin-top: 100px;
+}
+
+.main-content input{
+  padding: 5px;
+}
+
+#fr1-con input{
+  width: 120px;
+  height: 40px;
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  background: #008D96;
+  position: relative;
+  top: 100px;
+  left: 110px;
+}
+
+#fr2-con .btn{
+  width: 120px;
+  height: 40px;
+  font-size: 10px;
+  color: white;
+  border: 0;
+  background: #008D96;
+  font-weight: bold;
+  position: relative;
+  top: 65px;
+  left: 120px;
+}
+
+#fr2-con .file{
+  font-weight: bold;
+  position: relative;
+  top: 55px;
+  left: 85px;
+}
+
+
+/* BTN BACK */
+#btnback{
+  width: 100px;
+  height: 40px;
+  color: white;
+  padding: 10px;
+  background: #404040;
+  text-align: center;
+  display: block;
+  position: relative;
+  top: 420px;
+  right: -80px;
+}

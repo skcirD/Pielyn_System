@@ -32,15 +32,15 @@ require_once '../php/init.php';
                       <label for="password">Password</label><br>
                       <input class="txt-password" type="password" name="password" placeholder="Password">
                   </div>
-                  <div class="role">
+                  <!-- <div class="role">
                       <label for="password">Select User Type:</label><br>
                       <select class="select_role" name="userRole">
                           <option value="Admin">Admin</option>
                           <option value="Cashier">Cashier</option>
                       </select>
-                  </div>
+                  </div> -->
                   <div class="btn-login">
-                      <a href="#">Forgot Password?</a><br>
+                      <!-- <a href="forgot_password.php">Forgot Password?</a><br> -->
                       <button class ="btn-login" type="submit" name="submit">Login</button>
                   </div>
                 </form>

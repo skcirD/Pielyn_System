@@ -16,70 +16,11 @@ function login(){
   if (isset($_POST['submit'])) {
     $password = md5($_POST['password']);
     $username = $_POST['username'];
-    $role = $_POST['userRole'];
+    // $role = $_POST['userRole'];
 
 
-    $login = new login($username, $password, $role);
+    $login = new login($username, $password);
     $login->addminLogin();
-  }
-}
-
-// ADD NEW BRAND
-function add_Brand(){
-  if(isset($_GET['btn-addBrand']) && empty($_GET['txt-brand'])){
-    echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Enter a brand name to add <span class="closebtn">&times;</span></div>';
-  }
-  else if(isset($_GET['btn-addBrand']) && !empty($_GET['txt-brand'])){
-    $brandName = $_GET['txt-brand'];
-
-    $brand = new add($brandName);
-
-    if($brand->addBrand()){
-      echo "<script>alert('Brand successfully Added ')</script>";
-    }
-  }
-}
-
-// UPDATE BRAND
-
-// ADD NEW CATEGORY
-function add_Category(){
-  if(isset($_GET['btn-addCategory']) && empty($_GET['txt-category'])){
-    echo '<div class="txt-error" ><i class="fas fa-check-circle"></i>ERROR! Enter a category name to add <span class="closebtn">&times;</span></div>';
-  }
-  if(!empty($_GET['txt-category'])){
-    $category = $_GET['txt-category'];
-
-    $category = new add($category);
-
-    if($category->addCategory()){
-      echo "<script>alert('Category successfully Added')</script>";
-    }
-  }
-}
-
-// ADD NEW PRODUCT
-function add_Product(){
-  if(isset($_GET['btn-addProduct'])){
-    if(!empty($_GET['txt-pcode']) && !empty($_GET['txt-description']) &&
-    $_GET['select-brand'] != null && $_GET['select-category'] != null && !empty($_GET['txt-qty']) &&
-    !empty($_GET['txt-price']) && !empty($_GET['txt-reOrder']))
-    {
-      $pcode = $_GET['txt-pcode'];
-      $barcode = $_GET['txt-barcode'];
-      $description = $_GET['txt-description'];
-      $brand = $_GET['select-brand'];
-      $category = $_GET['select-category'];
-      $qty = $_GET['txt-qty'];
-      $price = $_GET['txt-price'];
-      $reOrder = $_GET['txt-reOrder'];
-
-      $product = new addProduct($pcode, $barcode, $description, $brand, $category, $qty, $price, $reOrder);
-
-      if($product->addProduct()){
-        echo '<script>alert("Successfuly added Product.")</script>';
-      }
-    }
   }
 }
 
@@ -90,155 +31,270 @@ function add_user(){
     $password = md5($_POST['password']);
     $firstname = $_POST['firstName'];
     $lastname = $_POST['lastName'];
+    $usersRole = $_POST['usersRole'];
 
-    if(!empty($username) && !empty($password) && !empty($firstname) && !empty($lastname)){
-      $user = new create_account($username, $password, $firstname, $lastname);
-      $user->createAccount();
-      echo "Successfully add account";
-    }
-    else{
-      echo "PLEASE FILL UP THE BLANKS";
-    }
-
-  }
-}
-
-// DISPLAY BRAND IN TABLE
-function displayBrand(){
-  $d = new brand();
-  $d->getBrandName();
-}
-
-// DISPLAY CATEGORY ON TABLE
-function displayCategory(){
-  $d = new category();
-  $d->getCategoryName();
-}
-
-// DISPLAY PRODUCTS ON TABLE
-function displayProduct(){
-  $p = new product();
-  $p->getProducts();
-}
-
-// DISPLAY ALL CATEGORY IN Dropdownlist and display selected value in update dropdownlist
-function display_categ_option(){
-  $categName = $_GET['cat'];
-  $categ = new categBrand();
-
-  echo "<option value=''>Select a Category</option>";
-  foreach ($categ->getCategory() as $data) {
-    echo "<option value='$data[category_name]'";
-          if($categName == $data['category_name'])
-          {
-            echo "selected";
-          }
-    echo ">$data[category_name]</option>";
-  }
-}
-
-//Display all brand in Dropdownlist and display selected value in update dropdownlist
-function display_brand_option(){
-  $brandName = $_GET['br'];
-  $categ = new categBrand();
-  $result = $categ->getBrand();
-
-  echo "<option value=''>Select a Brand</option>";
-  foreach ($result as $data) {
-    echo "<option value='$data[brand_name]'";
-        if ($brandName == $data['brand_name']) {
-          echo "selected";
-        }
-    echo">$data[brand_name]</option>";
-  }
-}
-
-function updateProduct(){
-  if (isset($_GET['btnUpdate'])) {
-    $id = $_GET['productId'];
-    $Pcode = $_GET['pcode'];
-    $Barcode = $_GET['barcode'];
-    $Description = $_GET['description'];
-    $Brand = $_GET['select-brand'];
-    $Category = $_GET['select-category'];
-    $Qty = $_GET['qty'];
-    $Price = $_GET['price'];
-    $Re_order = $_GET['reOrder'];
-
-    $product = new update_product($id, $Pcode, $Barcode, $Description, $Brand, $Category, $Qty, $Price, $Re_order);
-
-    $product->updateProduct();
-    if($product){
-      echo "<script>alert('Product has been successfully Updated')</script>";
-      pathTo('admin', 'product');
-
-    }else {
-      echo "<script>alert('Failed to update Product')</script>";
-      pathTo('admin', 'product');
+    $user = new create_account($username, $password, $firstname, $lastname, $usersRole);
+      if($user->createAccount()){
+        displayUsers();
+      }else {
+        echo "FAILED";
+      }
     }
   }
+
+
+function displayAuditT(){
+  $d = new audit_trail();
+  $d->displayAuditTrail();
 }
 
-function updateBrand(){
-  if (isset($_GET['btnUpdate'])) {
-    $id = $_GET['brandId'];
-    $newbrand = $_GET['brand'];
+function displayStocksReport(){
+  $d = new stocks_report();
+  $d->getStocksReport();
+}
 
-    $brand = new update_brand_categ($id, $newbrand);
+function displayStocks_Added(){
+  $d = new stocks_report();
+  $d->getStocksAdded();
+}
 
-    $brand->updateBrand();
-    if($brand){
-      echo "<script>alert('Brand has been successfully Updated')</script>";
-      pathTo('admin', 'brand');
+function displayUsers(){
+  echo "<script>
+            document.getElementById('tbl').innerHTML='';
+        </script>";
+  $d = new display_account();
+  $d->getUsers();
+}
 
-    }else {
-      echo "<script>alert('Failed to update Brand')</script>";
-      pathTo('admin', 'brand');
+function displayPurchaseOrderReport(){
+  $d = new purchase_report();
+  $d->getPurchaseOrder();
+}
+
+function displayReturnOrderReport(){
+  $d = new return_order();
+  $d->getReturnOrder();
+}
+
+function displaySummarySales(){
+  $d = new sales_invoice();
+  $d->getSummarySales();
+}
+
+function displayTotalSales(){
+  $d = new sales_invoice();
+  $d->getTotalSales();
+}
+
+function displaySlowMoving(){
+  $d = new slow_moving();
+  $d->getSlowmoving();
+}
+
+function displayFastMoving(){
+  $d = new fast_moving();
+  $d->getFastMoving();
+}
+
+function displaySalesByDate(){
+  if(isset($_GET['btnSubmit']))
+  {
+    $sdate = $_GET['sdate'];
+    $edate = $_GET['edate'];
+
+    $sdateNew = date("m/d/Y", strtotime($sdate));
+    $edateNew = date("m/d/Y", strtotime($edate));
+
+      // echo "<script>
+      //           document.getElementById('tbl').innerHTML='';
+      //       </script>";
+      // $d = new sales_invoice_filter($sdateNew, $edateNew);
+      // $d->getSalesInvoiceByFilter();
+      // $d->getTotalSalesByFilter();
+
+    if($sdate == "" && $edate == ""){
+      return;
+    }else{
+      echo "<script>
+                document.getElementById('tbl').innerHTML='';
+            </script>";
+      $d = new sales_invoice_filter($sdateNew, $edateNew);
+      $d->getSalesInvoiceByFilter();
+      $d->getTotalSalesByFilter();
     }
   }
 }
 
-function updateCategory(){
-  if (isset($_GET['btnUpdate'])) {
-    $id = $_GET['categoryId'];
-    $newCategory = $_GET['category'];
-
-    $category = new update_brand_categ($id, $newCategory);
-
-    $category->updateCategory();
-    if($category){
-      echo "<script>alert('Category has been successfully Updated')</script>";
-      pathTo('admin', 'category');
-
-    }else {
-      echo "<script>alert('Failed to update Category')</script>";
-      pathTo('admin', 'category');
-    }
+function displaySsalesAndtotal(){
+  if(isset($_POST['btnSummary'])) {
+      echo "<script>
+                document.getElementById('tbl').innerHTML='';
+            </script>";
+      $d = new sales_invoice();
+      $d->getSummarySales();
+      echo "<script>
+                window.location.href='sales_invoice.php';
+            </script>";
+      $s = new sales_invoice();
+      $s->getTotalSales();
   }
 }
 
-// DELETE BRAND ON TABLE
-function delete_brand(){
+function displayDAilySales(){
+  $date1 = date("Y-m-d");
+  $date2 = date("Y-m-d");
+
+
+  if(isset($_POST['btnDSales'])){
+    echo "<script>
+              document.getElementById('tbl').innerHTML='';
+          </script>";
+    // $s = new sales_invoice_filter($date1, $date2);
+    // $s->getDAilySalesAndTotal();
+  }
+}
+
+function displayCartVoid(){
+  $s = new displayCartVoid();
+  $s->getCartVoidReport();
+}
+
+function displayPOVoid(){
+  $s = new displayPOVoid();
+  $s->getPOVoidReport();
+}
+
+
+function deleteUser(){
   if(!empty($_GET['delete'])){
     $d = new delete($_GET['delete']);
-    $d->deleteBrand();
+    ;
+    if($d->deleteUser()){
+      displayUsers();
+    }
   }
 }
 
-// DELETE CATEGORY ON NTABLE
-function delete_category(){
-  if(!empty($_GET['delete'])){
-    $d = new delete($_GET['delete']);
-    $d->deleteCategory();
+
+function update_User(){
+  if(isset($_POST['ubtn-update'])){
+    $id = $_POST['lbliD'];
+    $fn = $_POST['nfirstName'];
+    $ln = $_POST['nlastName'];
+    $un = $_POST['nuserName'];
+    $pass = md5($_POST['npassword']);
+
+    $n = new update_user($id, $fn, $ln, $un, $pass);
+    if($n->updateUser()){
+      echo "<script>window.location.href='user_settings.php'</script>";
+
+    }else{
+      echo "<script>alert('UPDATE FAILED!')</script>";
+    }
+
   }
 }
-// DELETE PRODUCT
-function delete_product(){
-  if(!empty($_GET['delete'])){
-    $delete = new delete($_GET['delete']);
-    $delete->deleteProduct();
+
+function searchByTransacstionNo(){
+  if(isset($_GET['search'])){
+    $text = $_GET['search'];
+    echo "<script>
+              document.getElementById('tbl').innerHTML='';
+          </script>";
+
+    $s = new search_transacno($text);
+    $s->textSearch();
+    $s->getTotalSalesbyTransNo();
   }
 }
+
+function searchByTransacstionNo_print(){
+  if(isset($_GET['search'])){
+    $text = $_GET['search'];
+
+    echo "<script>
+              document.getElementById('tbl').innerHTML='';
+          </script>";
+
+    $s = new search_transacno_print($text);
+    $s->textSearch();
+    $s->getTotalSalesbyTransNo();
+    $s->getCashierName();
+  }
+}
+
+function printTSales(){
+    if(isset($_POST['btnPrint'])){
+      $text = $_GET['search'];
+      //  searchByTransacstionNo();
+      echo "<script>window.location.href='sales_invoice_print.php?search=".$text."'</script>";
+    }
+}
+
+
+function searchPurchaseOrder(){
+  if(isset($_GET['search'])){
+    $text = $_GET['search'];
+
+    echo "<script>
+              document.getElementById('tbl').innerHTML='';
+          </script>";
+
+          $s = new po_search($text);
+          $s->textSearch();
+          // $s->getTotalSalesbyTransNo();
+  }
+}
+
+function printPO(){
+    if(isset($_POST['btnPrint'])){
+      $text = $_GET['search'];
+      //  searchByTransacstionNo();
+      echo "<script>window.location.href='purchase_order_print.php?search=".$text."'</script>";
+    }
+}
+
+
+
+function printBO(){
+  if(isset($_POST['print'])){
+    $text = $_GET['search'];
+    echo "<script>window.location.href='return_order_print.php?search=".$text."'</script>";
+  }
+}
+
+
+function searchBO(){
+  if(isset($_GET['search'])){
+    $text = $_GET['search'];
+
+    echo "<script>
+              document.getElementById('tbl').innerHTML='';
+          </script>";
+
+          $s = new search_BO($text);
+          $s->textSearch();
+  }
+}
+
+function print_stocksR(){
+  if(isset($_POST['print'])){
+    echo "<script>window.location.href='stocks_added_print.php'</script>";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // BACK IN LOGIN FORM
 function logout(){
@@ -262,7 +318,7 @@ function security_session(){
   if(!isset($_SESSION)){
     session_start();
   }
-  if($_SESSION['status'] == 'invalid' || empty($_SESSION['status']) || $_SESSION['role'] != "Admin"){
+  if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
     $_SESSION['status'] = 'invalid';
     unset($_SESSION['firstname']);
     unset($_SESSION['lastname']);
@@ -270,39 +326,6 @@ function security_session(){
     pathTo('admin', 'login');
   }
 }
-
-
-
-
-
-
-
-###########################################################CASHIER FUNCTIONS#####################################################
-
-function searchProduct(){
-  if(isset($_POST['txt-searchBar'])){
-     $searchq = $_POST['txt-searchBar'];
-     $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-
-     $search = new pos_search_product($searchq);
-
-     if($search->searchP()){
-       foreach ($search->searchP() as $data) {
-         echo "<tr>";
-         echo     "<td>$data[barcode]</td>
-                   <td>$data[description]</td>
-                   <td>$data[price]</td>
-                   <td>$data[quantity]</td>";
-         echo "</tr>";
-       }
-     }else{
-       echo "<script>
-         document.querySelector('.txt-search').style.innerHTML = 'Not Found'
-       </script>";
-     }
-   }
-}
-
 
 
 ?>

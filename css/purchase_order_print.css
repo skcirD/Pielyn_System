@@ -1,0 +1,39 @@
+.main-content{
+  display: block;
+}
+
+.tableTop-con h1{
+  margin: 10px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  padding: 5px;
+}
+
+
+table { border-collapse:collapse;   }
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
+
+
+table{
+  width: 100%;
+  margin-top: 10px;
+  background: #FFFFFF;
+}
+
+table th{
+  padding: 10px;
+  position: relative;
+  font-size: 12px;
+}
+table td{
+  text-align: center;
+  font-size: 10px;
+}
+
+.tableTop-con{
+  border-radius: 5px;
+}

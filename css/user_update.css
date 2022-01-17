@@ -1,0 +1,167 @@
+
+/* table con */
+.account-con{
+  width: 800px;
+  height: 440px;
+  margin-left: -60px;
+  margin-right: 50px;
+  background: #FFFFFF;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: solid 1.5px #DDDDDD;
+  overflow-y: scroll;
+}
+
+/* ADD-UPDATE  con*/
+.add-update-con{
+  width: 350px;
+  height: 440px;
+  background: #FFFFFF;
+}
+
+
+table { border-collapse:collapse;   }
+td,
+th{
+    border: 1px solid rgb(190, 190, 190);
+    text-align: center;
+}
+
+table{
+  width: 100%;
+}
+
+table th{
+  background: #008D96;
+  padding: 10px;
+  color: white;
+}
+
+#txt{
+  margin-bottom: 15px;
+}
+
+/* ACTION BUTTON */
+#action{
+  display: inline-block;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+/* create-update */
+.form-con input{
+  padding: 5px;
+  width: 100%;
+}
+
+.form-con select{
+  padding: 5px;
+  width: 100%;
+}
+
+.form-con button{
+  padding: 5px;
+  width: 150px;
+  height: 30px;
+  margin-left: 80px;
+  margin-top: 30px;
+  border: 0;
+  background: #008D96;
+  color: white;
+}
+
+form{
+  padding: 20px;
+}
+
+
+/* BTN BACK */
+#btnback{
+  width: 100px;
+  height: 40px;
+  color: white;
+  padding: 10px;
+  background: #404040;
+  text-align: center;
+  display: block;
+}
+
+.btn{
+  position: absolute;
+  right: 40px;
+  bottom: 10px;
+}
+
+
+/* TITLE text */
+.title{
+  padding: 10px;
+}
+
+.title h1{
+  color: #008D96;
+  font-weight: lighter;
+}
+
+
+/* MODAL - UPDATE*/
+
+.modal-con{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  display: flex;
+}
+
+.update-con{
+  width: 400px;
+  height: 450px;
+  background: white;
+  position: relative;
+  top: 100px;
+  border-radius: 3px;
+}
+
+.update-form input{
+  padding: 5px;
+  width: 100%;
+}
+
+.update-form select{
+  padding: 5px;
+  width: 100%;
+}
+
+.update-form button{
+  padding: 5px;
+  width: 150px;
+  height: 30px;
+  margin-top: 30px;
+  margin-left: 20px;
+  border: 0;
+  background: #008D96;
+  color: white;
+}
+
+.update-form a{
+  padding: 5px;
+  width: 150px;
+  height: 30px;
+  margin-top: 30px;
+  margin-left: 20px;
+  border: 0;
+  background: #008D96;
+  color: white;
+  text-align: center;
+}
+
+#m-txt{
+  margin-bottom: 15px;
+}
+
+.mbtn-form{
+  display: flex;
+}

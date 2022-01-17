@@ -1,0 +1,52 @@
+.main-content{
+  display: flex;
+}
+.date-top{
+  position: absolute;
+  top: 135px;
+  left: 55px;
+  font-weight: bolder;
+}
+
+#total{
+  font-weight: bold;
+}
+
+.lblTotal-sales{
+  margin-bottom: 10px;
+  float: right;
+}
+
+
+
+.tableTop-con h1{
+  margin: 10px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  padding: 5px;
+  color: #008D96;
+}
+
+
+table { border-collapse:collapse;   }
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
+
+
+table{
+  width: 100%;
+  background: #FFFFFF;
+}
+
+table th{
+  padding: 10px;
+  color: black;
+  position: relative;
+}
+table td{
+  text-align: center;
+  font-size: 10px;
+}

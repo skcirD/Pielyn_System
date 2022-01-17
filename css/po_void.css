@@ -1,0 +1,90 @@
+.main-content{
+  display: block;
+}
+.table-con{
+  width: 100%;
+  height: 450px;
+  border: solid 1.5px #DDDDDD;
+  margin-top: -10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-left: -50px;
+  background: #FFFFFF;
+  overflow-y: scroll;
+}
+
+.tableTop-con{
+  padding-top: 10px;
+}
+
+.tableTop-con a{
+  margin: 5px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 10px;
+  margin-top: 5px;
+  color: gray;
+  padding: 5px;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+#po{
+  font-size: 15px;
+  text-decoration: underline;
+
+}
+
+#item:hover{
+  transition: 0.5s;
+  font-size: 15px;
+}
+
+
+table { border-collapse:collapse;   }
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
+
+
+table{
+  width: 100%;
+  margin-top: 10px;
+  background: #FFFFFF;
+}
+
+table th{
+  background: #22616D;
+  padding: 10px;
+  color: white;
+  position: relative;
+  font-size: 12px;
+}
+table td{
+  text-align: center;
+  font-size: 10px;
+}
+
+.tableTop-con{
+  border-radius: 5px;
+}
+
+
+/* BTN BACK */
+#btnback{
+  width: 100px;
+  height: 40px;
+  color: white;
+  padding: 10px;
+  background: #404040;
+  text-align: center;
+  display: block;
+}
+
+.btn{
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
+}

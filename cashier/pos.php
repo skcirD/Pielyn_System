@@ -9,9 +9,13 @@ require_once '../php/init.php';
      <meta charset="utf-8">
      <title>Point of Sale</title>
      <link rel="stylesheet" href="../css/pos.css">
+     <link rel="icon" href="images/pos-Logo1.png">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
    </head>
    <body>
       <div class="main-container">
@@ -41,7 +45,24 @@ require_once '../php/init.php';
                 </div>
             </div>
             <div class="body-con">
-                <div class="pos-table-container">
+              <div class="pos-table-container">
+                <table class="pos-table">
+                    <thead>
+                        <tr>
+                          <th>Barcode</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Sub.Total</th>
+                          <th>Qty</th>
+                          <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+               </table>
+             </div>
+                <!-- <div class="pos-table-container">
                     <table class="pos-table">
                         <thead>
                             <th>Barcode</th>
@@ -54,20 +75,25 @@ require_once '../php/init.php';
 
                         </tbody>
                     </table>
-                </div>
+                </div> -->
                 <div class="search-container">
                     <form class="search-form" action="" method="post">
                         <input class="txt-search" type="search" name="txt-searchBar" placeholder="Search Product">
+                        <input class="btn-search" type="submit" name="btn-search" value="search">
                     </form>
                     <div class="pos-table2-container">
-                        <table class="pos-table2">
+                        <table class="pos-table2" style="">
                             <thead>
+                              <tr>
                                 <th>Barcode</th>
                                 <th>Product Name</th>
                                 <th >Price</th>
                                 <th>stocks</th>
+                                <th>Action</th>
+                              </tr>
                             </thead>
                             <tbody>
+                                <!-- <?php  ?> display_pos_product(); -->
                                 <?php searchProduct(); ?>
                             </tbody>
                         </table>
@@ -115,5 +141,12 @@ require_once '../php/init.php';
                 </div>
             </div>
       </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.js" charset="utf-8"></script>
+      <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js" charset="utf-8"></script>
    </body>
  </html>
+ <script type="text/javascript">
+   $(document).ready(function() {
+       $('#example').DataTable();
+   } );
+ </script>

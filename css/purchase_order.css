@@ -1,0 +1,86 @@
+.main-content{
+  display: block;
+}
+.table-con{
+  width: 100%;
+  height: 450px;
+  border: solid 1.5px #DDDDDD;
+  margin-top: -10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-left: -50px;
+  background: #FFFFFF;
+  overflow-y: scroll;
+}
+
+.tableTop-con h1{
+  margin: 10px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  padding: 5px;
+  color: #008D96;
+}
+
+
+table { border-collapse:collapse;   }
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
+
+
+table{
+  width: 100%;
+  margin-top: 10px;
+  background: #FFFFFF;
+}
+
+table th{
+  background: #008D96;
+  padding: 10px;
+  color: white;
+  position: relative;
+  font-size: 12px;
+}
+table td{
+  text-align: center;
+  font-size: 10px;
+}
+
+.tableTop-con{
+  border-radius: 5px;
+  display: flex;
+}
+
+
+/* BTN BACK */
+#btnback{
+  width: 100px;
+  height: 40px;
+  color: white;
+  padding: 10px;
+  background: #404040;
+  text-align: center;
+  display: block;
+}
+
+.btnb{
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
+}
+
+.print-con input{
+  border: 0;
+  padding: 10px;
+  color: white;
+  width: 100px;
+  margin-top: 5px;
+  margin-left: 52px;
+}
+
+.tableTop-con input{
+  margin-top: 20px;
+  padding: 5px;
+}
