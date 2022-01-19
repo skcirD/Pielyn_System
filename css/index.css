@@ -1,188 +1,148 @@
+:root{
+  --main-radius: 7px;
+}
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: sans-serif;
+  text-decoration: none;
 }
 body{
-  /* background-color: rgb(238, 234, 234); */
-  /* background-color: #ffffff; */
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
 }
-/* Class.......
-............................. */
+.main{
+  transition: 1s;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 3fr 3fr 1fr 3fr 3fr 1fr;
+  grid-template-rows: 0.5fr 0.3fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "nav nav nav nav nav nav nav"
+  ". . . . . . .     "
+  ". ss po . as bnr ."
+  ". bor sr . at vr ."
+  ". sm fm . lg . .  "
+  ". . . . . . .     ";
 
-/* TOPBAR...................... */
-/* container */
-.top-con{
-  width: 100%;
-  height: 75px;
-  background-color: #22616D;
+  grid-column-gap: 3rem;
+  grid-row-gap: 2rem;
+}
+
+.nav{
+  background: #22616D;
+  grid-area: nav;
+  display: flex;
+}
+
+.ss{
+  background: #22616D;
+  grid-area: ss;
+  border-radius: var(--main-radius);
+
+  color: white;
+  display: flex;
+  padding: 10px;
+}
+.po{
+  background: #22616D;
+  grid-area: po;
+  border-radius: var(--main-radius);
+
+  display: flex;
+  color: white;
+}
+.as{
+  background: #22616D;
+  grid-area: as;
+  border-radius: var(--main-radius);
+  display: flex;
+  color: white;
+}
+.bnr{
+  background: #22616D;
+  grid-area: bnr;
+  border-radius: var(--main-radius);
+  display: flex;
+  color: white;
+}
+.bor{
+  background: #22616D;
+  grid-area: bor;
+  border-radius: var(--main-radius);
+  display: flex;
+  color: white;
+}
+.sr{
+  background: #22616D;
+  grid-area: sr;
+  border-radius: var(--main-radius);
+  display: flex;
+  color: white;
+}
+.at{
+  background: #22616D;
+  grid-area: at;
+  border-radius: var(--main-radius);
+  display: flex;
+  color: white;
+}
+.vr{
+  background: #22616D;
+  grid-area: vr;
+  border-radius: var(--main-radius);
+  display: flex;
+  color: white;
+}
+.sm{
+  background: #22616D;
+  grid-area: sm;
+  border-radius: var(--main-radius);
+  display: flex;
+  color: white;
+}
+.fm{
+  background: #22616D;
+  grid-area: fm;
+  border-radius: var(--main-radius);
+  display: flex;
+  color: white;
+}
+.lg{
+  background: #22616D;
+  grid-area: lg;
+  border-radius: var(--main-radius);
   display: flex;
   color: white;
 }
 
-.info{
-  margin: 10px;
-}
-
-.info h6{
-  margin-top: 5px;
-}
-
-.logo img{
-  width: 70px;
-  height: 60px;
-  margin: 8px;
-}
-
+/* CLOCK */
 .clock{
   font-weight: bold;
-  width: 230px;
+  width: 15rem;
   font-size: 20px;
   position: absolute;
   right: 0;
   top: 10px;
 }
 
-
-
-/* LOGO */
-
-.main-content{
-  display: flex;
-  margin-left: 100px;
-  margin-top: 50px;
-}
-
-.con-1{
-  display: flex;
-}
-
-.col1-col2{
-  display: flex;
-}
-.sales-invoice-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  padding: 10px;
-}
-.sales-invoice-con h3{
-  display: flex;
-}
-
-
-.returnOrder-report-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-#c1{
-  margin: 20px;
-}
-
-#c2{
-  margin: 20px;
-}
-.purchaseOrder-report-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-.slow-moving-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-.purchase-orderReport-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-.stock-report-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-.fast-moving-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-
-/* COL 2 account settings - Logout */
-.con-2{
-  display: flex;
-}
-
-.col-123{
-  display: flex;
-}
-
-#c2{
-  margin: 20px;
-}
-
-.acc-setting-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-.audit-trail-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-.backup-restore-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
-}
-
-.logout-con{
-  width: 200px;
-  height: 100px;
-  background-color: #22616D;
-  border-radius: 5px;
-  display: flex;
-  color: white;
+@media only screen and (max-width: 550px){
+  .main{
+    transition: 1s;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "nav"
+    "ss"
+    "po"
+    "as"
+    "bnr"
+    "bor"
+    "sr"
+    "at"
+    "vr"
+    "sm"
+    "fm"
+    "lg";
+    grid-gap:0.5rem;
+  }
 }

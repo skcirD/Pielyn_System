@@ -1,205 +1,155 @@
-body{
-  background-color: #CDF0EA;
-  display: flex;
-  justify-content: center;
-  margin-top: 70px;
-  font-family: 'Roboto', sans-serif;
-  color: white;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-h1{
-  font-size: 76px;
-  text-align: center;
-  margin-bottom: 0;
-  margin-top: 25px;
-}
-.text-login hr{
-  width: 50%;
-  height: 2px;
-  border-style: outset;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  border-width: 4px;
-}
-
-label{
-  font-weight: bolder;
-}
-
-input{
-  width: 350px;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
-  margin: 10px 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  padding-left: 10px;
-}
-
-a{
-  text-decoration: none;
-  color: white;
-  font-style: italic;
-  font-size: 10px;
-  text-align: center;
-  margin-left: 90px;
-}
-
-a:hover{
-  font-size: 15px;
-  margin-left: 80px;
-  transition: 0.5s;
-}
-
-button{
-  border-radius: 30px;
-  border: none;
-  background-color: #f8a054;
-  color: white;
-  width: 150px;
-  height: 40px;
-  font-size: 30px;
-  font-weight: bolder;
-  box-shadow: 2px 2px 10px 2px rgb(78, 78, 78);
-  transition: 1s;
-}
-
-button:hover{
-  background-color: #f5780a;
-  color: white;
-
-  cursor: pointer;
-}
-
-
-
-/* ......CLASS............
-...........................*/
-.text-login{
-  margin-bottom: 30px;
-}
-
-/* ALL CONATAINER...................................................... */
-.container{
-  background-color: white;
-  width: 900px;;
-  height: 480px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: 0px 0px 10px 2px rgb(78, 78, 78);
-  border-radius: 25px;
-  background-color: white;
-}
-
-/* CONTAINER LOGO.......... */
-.logo-container{
-  width: 450px;
-  height: 100%;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-login{
-  margin-left: 50px;
-  margin-top: 10px;
-}
-
-/* LOGIN FORM............ */
-.login-form{
-  width: 450px;
-  height: 100%;
-  background-color: #008D96;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-}
-
-/* IMAGE LOGO........... */
-.img-logo{
-  width: 480px;
-  height: 480px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-}
-
-
-/* FAILED TO LOGIN style */
-.alert{
-  margin-bottom: 20px;
-  padding: 5px;
-  background-color: #F5F5F5;
-  color: orange;
-  border-radius: 4px;
-
-}
-
-.closebtn{
-  margin-left: 15px;
-  color: orange;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 15px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* MODAL CONTAINER  */
-/* p{
-  color: #008D96;
-  font-size: 20px;
-  font-weight: bolder;
-  margin-bottom: 50px;
-}
-.modal-container{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-
-.modal-login{
-  width: 340px;
-  height: 150px;
+section{
   position: relative;
-  background-color: white;
-  border-radius: 5px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: #22616D;
+}
+
+section .logo{
+  position: relative;
+  width: 50%;
+  height: 100%;
+
+}
+
+section .logo img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* center form conent */
+section .contentBx{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  height: 100%;
 }
 
-.btn-modal{
-  width: 100px;
-  height: 30px;
-  font-size: 20px;
-  position: absolute;
-  bottom: 20px;
+section .contentBx .form-con{
+  width: 50%;
 }
 
-.header{
-  position: absolute;
-  top: 0;
+section .contentBx .form-con h2{
+  color: white;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid white;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+section .contentBx .form-con .inputBx{
+  margin-bottom: 20px;
+}
+section .contentBx .form-con .inputBx span{
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+section .contentBx .form-con .inputBx input{
   width: 100%;
-  height: 35px;
-  background-color: #008D96;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-} */
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid white;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #607d8b;
+  border-radius: 30px;
+}
+
+section .contentBx .form-con .inputBx input[type=submit]{
+  background: #FF7700;
+  color: white;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+section .contentBx .form-con .inputBx input[type=submit]:hover{
+background: #DF761D;
+}
+
+section .contentBx .forgotPass{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+section .contentBx .forgotPass a{
+color: white;
+text-decoration: none;
+}
+
+section .contentBx .forgotPass a:hover{
+  text-decoration: underline;
+}
+
+/* mobile */
+@media (max-width: 768px){
+  section .logo
+  {
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    width: 30%;
+    height: 20%;
+    border-radius: 10px;
+  }
+
+  section .logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+}
+  section .contentBx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  section .contentBx .form-con{
+    width: 100%;
+    padding: 40px;
+    margin: 50px;
+  }
+}
+
+/* @media (max-height: 648px && max-width: 768px) {
+  section .logo
+   {
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    width: 30%;
+    height: 20%;
+    border-radius: 10px;
+  } */
+}

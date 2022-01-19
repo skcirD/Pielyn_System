@@ -40,11 +40,11 @@
         }
         elseif ($_SESSION['role'] == "Cashier") {
           $_SESSION['status'] = 'invalid';
-          echo "Incorrect Username or Password.";
+          echo "<a id='inc' style='color:red;display: block;background: white;padding: 5px;border-radius: 5px;margin-bottom: 13px;'>Incorrect Username or Password.</a>";
         }
         elseif ($_SESSION['role'] == "Stockman") {
           $_SESSION['status'] = 'invalid';
-          echo "Incorrect Username or Password.";
+          echo "<a id='inc' style='color:red;display: block;background: white;padding: 5px;border-radius: 5px;margin-bottom: 13px;'>Incorrect Username or Password.</a>";
         }
         // else if($_SESSION['role'] == "Cashier" || $_SESSION['role'] == "Stockman"){
         //   echo "<script>alert('Wrong Password or Username!')</script>";
@@ -53,7 +53,7 @@
 
       }else{
         $_SESSION['status'] = 'invalid';
-        echo "Incorrect Username or Password.";
+        echo "<a id='inc' style='color:red;display: block;background: white;padding: 5px;border-radius: 5px;margin-bottom: 13px;'>Incorrect Username or Password.</a>";
               // echo '<div class="alert">
               //   <span class="closebtn">&times;</span>
               //   <strong>Failed!</strong> Check your Username and Password.

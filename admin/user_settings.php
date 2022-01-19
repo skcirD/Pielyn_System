@@ -10,7 +10,7 @@ security_session();
     <link rel="icon" href="images/circle-Logo1.png">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/user_settings.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
